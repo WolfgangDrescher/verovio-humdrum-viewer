@@ -81,7 +81,7 @@
 @ZH-simplified:
 @ZH-traditional:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('chorales')
+@ACTION:		MENU.loadRepertory('chorales-185')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:
