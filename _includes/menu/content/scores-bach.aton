@@ -47,6 +47,103 @@
 
 @@BEGIN: ENTRY
 @@BEGIN: TEXT
+@DEFAULT:		Chorales (185)
+@AR:
+@CA:
+@CS:
+@DE:
+@DK:
+@EL:
+@EN:
+@ES:			Corales	(185)
+@ET:
+@EU:
+@FI:
+@FR:
+@HE:
+@HI:
+@ID:
+@IT:
+@JA:
+@KO:
+@LT:
+@LV:
+@NL:
+@NO:
+@PL:			370 chorałów Bacha
+@PT:
+@RU:
+@SK:
+@SV:
+@TR:
+@UK:
+@VI:
+@ZH-simplified:
+@ZH-traditional:
+@ZH-traditional:
+@ACTION:		MENU.loadRepertory('chorales')
+@@END: TEXT
+@@BEGIN: RIGHT_TEXT
+@TYPE:
+@LINK:
+@@END: RIGHT_TEXT
+@@BEGIN: RIGHT_TEXT
+@TYPE:			github
+@LINK:			https://github.com/musedata/humdrum-bach-chorales-185
+@@END: RIGHT_TEXT
+@@END: ENTRY
+
+
+@@BEGIN: ENTRY
+@@BEGIN: TEXT
+@DEFAULT:		Chorales (370)
+@AR:
+@CA:
+@CS:
+@DE:
+@DK:
+@EL:
+@EN:
+@ES:			Corales	(370)
+@ET:
+@EU:
+@FI:
+@FR:
+@HE:
+@HI:
+@ID:
+@IT:
+@JA:
+@KO:
+@LT:
+@LV:
+@NL:
+@NO:
+@PL:			370 chorałów Bacha
+@PT:
+@RU:
+@SK:
+@SV:
+@TR:
+@UK:
+@VI:
+@ZH-simplified:
+@ZH-traditional:
+@ZH-traditional:
+@ACTION:		MENU.loadRepertory('chorales')
+@@END: TEXT
+@@BEGIN: RIGHT_TEXT
+@TYPE:			website
+@LINK: 			https://chorales.sapp.org
+@@END: RIGHT_TEXT
+@@BEGIN: RIGHT_TEXT
+@TYPE:			github
+@LINK:			https://github.com/craigsapp/bach-370-chorales
+@@END: RIGHT_TEXT
+@@END: ENTRY
+
+@@BEGIN: ENTRY
+@@BEGIN: TEXT
 @DEFAULT:		Chorales (370)
 @AR:
 @CA:
