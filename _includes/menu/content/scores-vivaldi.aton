@@ -36,7 +36,7 @@
 @ZH-simplified:
 @ZH-traditional:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('musedata/vivaldi/op01')
+@ACTION:		MENU.loadRepertory('vivaldi/op01')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			website
