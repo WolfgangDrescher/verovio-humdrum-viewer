@@ -210,7 +210,7 @@ function loadKernScoresFile(obj, force) {
 			console.log("Error retrieving", key);
 		});
 	} else if (!info) {
-		console.log("Going to download2", key);
+		console.log("Going to download2 KEY=", key, "URL=", url);
 
 		basketSession.require(
 			{	url: url,
