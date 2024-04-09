@@ -663,6 +663,29 @@ function toggleAppoggiaturaColoring() {
 
 //////////////////////////////
 //
+// toggleCautionaryAccidentalColoring --
+//
+
+function toggleCautionaryAccidentalColoring() {
+	var sylesheet;
+	stylesheet = document.querySelector("#cautionary-accidental-color-stylesheet");
+	if (stylesheet) {
+		var parentElement = stylesheet.parentNode;
+		parentElement.removeChild(stylesheet);
+		return;
+	}
+	stylesheet = document.createElement('style');
+	var text = "";
+	text += "g.accid.caution[id^='accid-'] { fill: hotpink; }\n";
+	stylesheet.innerHTML = text;
+	stylesheet.id = "cautionary-accidental-color-stylesheet";
+	document.body.appendChild(stylesheet);
+}
+
+
+
+//////////////////////////////
+//
 // toggleLayerColoring -- turn layer color highlighting on/off.
 //
 

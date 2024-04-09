@@ -864,6 +864,11 @@ function processInterfaceKeyCommand(event) {
 			break;
 
 		case KEYS.XKey:          // UNUSED
+			if (event.altKey) {
+				if (event.shiftKey) {
+					toggleCautionaryAccidentalColoring();
+				}
+			}
 			break;
 
 		case KEYS.YKey:          // show/hide text editor
