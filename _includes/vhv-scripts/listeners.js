@@ -135,35 +135,59 @@ document.addEventListener("DOMContentLoaded", function() {
 	}
 
 	if (CGI.k) {
-		if (CGI.k.match(/y/)) {
-			toggleTextVisibility(true);
-		}
+
+		// b: hide VhvTitle:
 		if (CGI.k.match(/b/)) {
 			toggleVhvTitle();
 		}
+
+		// B: hide toolbar: (has changed key, so need to fix)
 		if (CGI.k.match(/B/)) {
 			HIDEINITIALTOOLBAR = true;
 		}
+
+		// E: hide menu and toolbar:
+		if (CGI.k.match(/E/)) {
+			HIDEMENUANDTOOLBAR = true;
+		}
+
+		// d: hide menu:
+		if (CGI.k.match(/d/)) {
+			HIDEMENU = true;
+		}
+
+		// m: display MEI data (conversion) initially:
 		if (CGI.k.match(/m/)) {
 				toggleTextVisibility(true);
 				INITIALMEI = true;
 				// displayMeiNoType();
 		}
-		if (CGI.k.match(/E/)) {
-			HIDEMENUANDTOOLBAR = true;
+		if (CGI.k.match(/m/)) {
+			// start in MEI mode
+			EditorMode = "xml";
+			setEditorModeAndKeyboard();
+			if (!CGI.k.match(/e/)) {
+				displayMeiNoType();
+			}
 		}
-		if (CGI.k.match(/d/)) {
-			HIDEMENU = true;
-		}
+
+		// l: turn on layer coloring:
 		if (CGI.k.match(/l/)) {
 			// Presumed to be off at initialization of the page.
 			toggleLayerColoring();
 		}
+
+		// p: start in paged mode:
 		if (CGI.k.match(/p/)) {
 			PAGED = true;
 		}
+		
+		// y: initally hide text
+		if (CGI.k.match(/y/)) {
+			toggleTextVisibility(true);
+		}
 
-		var wcount = 0;
+		// w: adjust spacing:
 		for (var i=0; i<CGI.k.length; i++) {
 			if (CGI.k.charAt(i) === "w") {
 				SPACINGADJUSTMENT += 0.05;
@@ -172,13 +196,9 @@ document.addEventListener("DOMContentLoaded", function() {
 			}
 		}
 
-		if (CGI.k.match(/m/)) {
-			// start in MEI mode
-			EditorMode = "xml";
-			setEditorModeAndKeyboard();
-			if (!CGI.k.match(/e/)) {
-				displayMeiNoType();
-			}
+		// X: highlight courtesy accidentals:
+		if (CGI.k.match(/X/)) {
+			toggleCautionaryAccidentalColoring();
 		}
 	}
 
