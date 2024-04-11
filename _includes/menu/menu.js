@@ -858,6 +858,17 @@ MenuInterface.prototype.toggleLayerHighlighting = function () {
 
 //////////////////////////////
 //
+// MenuInterface::toggleCautionaryAccidentalHighlighting --
+//
+
+MenuInterface.prototype.toggleCautionaryAccidentalHighlighting = function () {
+	toggleCautionaryAccidentalColoring();
+};
+
+
+
+//////////////////////////////
+//
 // MenuInterface::increaseTabSize --
 //
 
