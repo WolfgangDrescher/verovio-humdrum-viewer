@@ -1417,11 +1417,13 @@ function getUrlAndFilterList(prefix) {
 	output.filter = {};
 	let title = "";
 
+	// URL has a title
 	let query;
 	query = `^${prefix}URL(\\d*)-(.+?):\\s*((?:ftp|https?)://[^\\s]+)`;
 	query += "\\s+(.*)\\s*$";
 	let rex = new RegExp(query);
 
+	// URL does not have a title
 	let query2;
 	query2 = `^${prefix}URL(\\d*)-(.+?):\\s*((?:ftp|https?)://[^\\s]+)`;
 	let rex2 = new RegExp(query2);
@@ -1483,8 +1485,16 @@ function getUrlAndFilterList(prefix) {
 				obj.line = i;
 				obj.text = data[i];
 				obj.type = matches[2]
+				obj.title = "";
+				let matches2;
+				if (matches2 = obj.type.match("pdf-(.*)")) {
+					obj.type = "pdf";
+					obj.title = matches2[1];
+				}
 				obj.url = matches[3];
-				obj.title = matches[4];
+				if (matches[4] && !matches[4].match(/^\s*$/)) {
+					obj.title = matches[4];
+				}
 				if (typeof output.url[obj.type] === "undefined") {
 					output.url[obj.type] = [];
 				}
