@@ -54,6 +54,7 @@
 @@END: SUBMENU
 @@END: ENTRY
 
+
 @@BEGIN: ENTRY
 @@BEGIN: TEXT
 @DEFAULT:		Beethoven piano sonatas
@@ -98,6 +99,7 @@
 @@END: RIGHT_TEXT
 @@END: ENTRY
 
+
 @@BEGIN: ENTRY
 @@BEGIN: TEXT
 @DEFAULT:		Beethoven string quartets
@@ -141,6 +143,7 @@
 @LINK:			https://github.com/craigsapp/beethoven-string-quartets
 @@END: RIGHT_TEXT
 @@END: ENTRY
+
 
 @@BEGIN: ENTRY
 @@BEGIN: TEXT
@@ -190,6 +193,7 @@
 @@END: RIGHT_TEXT
 @@END: ENTRY
 
+
 @@BEGIN: ENTRY
 @@BEGIN: TEXT
 @DEFAULT:		Chopin mazurkas
@@ -234,6 +238,57 @@
 @LINK:			https://github.com/craigsapp/chopin-mazurkas
 @@END: RIGHT_TEXT
 @@END: ENTRY
+
+
+@@BEGIN: ENTRY
+@@BEGIN: TEXT
+@DEFAULT:		Corelli, Arcangelo
+@AR:
+@CA:
+@CS:
+@DE:
+@DK:
+@EL:
+@EN:
+@ES:
+@ET:
+@EU:
+@FI:
+@FR:
+@HE:
+@HI:
+@ID:
+@IT:
+@JA:
+@KO:
+@LT:
+@LV:
+@NL:
+@NO:
+@PL:
+@PT:
+@RU:
+@SK:
+@SV:
+@TR:
+@UK:
+@VI:
+@ZH-simplified:
+@ZH-traditional:
+@@END: TEXT
+@@BEGIN: RIGHT_TEXT
+@TYPE:
+@LINK:
+@@END: RIGHT_TEXT
+@@BEGIN: RIGHT_TEXT
+@TYPE:
+@LINK:
+@@END: RIGHT_TEXT
+@@BEGIN: SUBMENU
+{% include menu/content/scores-corelli.aton %}
+@@END: SUBMENU
+@@END: ENTRY
+
 
 @@BEGIN: ENTRY
 @@BEGIN: TEXT
@@ -283,6 +338,7 @@
 @@END: RIGHT_TEXT
 @@END: ENTRY
 
+
 @@BEGIN: ENTRY
 @@BEGIN: TEXT
 @DEFAULT:		Haydn keyboard sonatas
@@ -326,6 +382,7 @@
 @LINK:			https://github.com/craigsapp/haydn-keyboard-sonatas
 @@END: RIGHT_TEXT
 @@END: ENTRY
+
 
 @@BEGIN: ENTRY
 @@BEGIN: TEXT
@@ -371,6 +428,7 @@
 @@END: RIGHT_TEXT
 @@END: ENTRY
 
+
 @@BEGIN: ENTRY
 @@BEGIN: TEXT
 @DEFAULT:		Joplin
@@ -414,6 +472,7 @@
 @LINK:			https://github.com/craigsapp/joplin-rags
 @@END: RIGHT_TEXT
 @@END: ENTRY
+
 
 @@BEGIN: ENTRY
 @@BEGIN: TEXT
@@ -463,6 +522,7 @@
 @LINK:			https://github.com/WolfgangDrescher/lassus-geistliche-psalmen
 @@END: RIGHT_TEXT
 @@END: ENTRY
+
 
 @@BEGIN: ENTRY
 @@BEGIN: TEXT
