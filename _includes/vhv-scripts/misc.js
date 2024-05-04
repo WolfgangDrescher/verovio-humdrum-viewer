@@ -2304,3 +2304,16 @@ function cleanFont(font) {
 
 
 
+//////////////////////////////
+//
+// showPageModeHelp --
+//
+
+function showPageModeHelp() {
+	let url = "https://doc.verovio.humdrum.org/interface/page-modes";
+	let help = window.open(url, "documentation");
+	help.focus();
+}
+
+
+
