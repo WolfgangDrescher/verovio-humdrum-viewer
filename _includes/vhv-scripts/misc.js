@@ -427,8 +427,8 @@ function displayWorkNavigation(selector) {
 	}
 
 	if (FILEINFO["file"]) {
-		contents += "<span style=\"padding-left:3px; cursor:pointer\" onclick=\"displayKeyscape();\"";
-		contents += " title='Keyscape'";
+		contents += "<span style=\"padding-left:3px; cursor:pointer\" onclick=\"displayKeyscape(event);\"";
+		contents += " title='Keyscape: harmonic structure of music. shift=transpose to C; alt=do not trim'";
 		contents += ">";
 		contents += "<span class='nav-icon fa fa-key'></span>";
 		contents += "</span>";
@@ -1309,7 +1309,8 @@ function displayPdf() {
 // displayKeyscape --
 //
 
-function displayKeyscape() {
+function displayKeyscape(event) {
+console.log(event);
 	let fileinfo = FILEINFO;
 	if (!fileinfo) {
 		console.log("Error: no fileinfo");
@@ -1338,10 +1339,20 @@ function displayKeyscape() {
 	url += encodeURIComponent(file);
 	url += "&l=";
 	url += encodeURIComponent(location);
-	url += "&format=keyscape-html";
-	console.log("Keyscape URL is", url);
-
-	console.log("Loading Keyscape", url);
+	if (event.shiftKey) {
+		if (event.altKey) {
+			url += "&format=keyscape-tonic-dirty-html";
+		} else {
+			url += "&format=keyscape-tonic-html";
+		}
+	} else {
+		if (event.altKey) {
+			url += "&format=keyscape-dirty-html";
+		} else {
+			url += "&format=keyscape-html";
+		}
+	}
+	// console.log("Loading Keyscape", url);
 	if (WKEY) {
 		WKEY.close();
 		WKEY = null;
