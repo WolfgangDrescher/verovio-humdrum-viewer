@@ -861,14 +861,33 @@ div#index-table-wrapper {
 }
 
 #close-button {
+	border: none;
 	background: #01313f;
 	color: #ffffff99;
+	width: 32px;
+	height: 32px;
 	position: absolute;
 	top: 30px;
 	left: 10px;
 }
 
 #close-button:hover {
+	color: #ffffffff;
+	pointer: pointer;
+}
+
+#random-button {
+	border: none;
+	background: #01313f;
+	color: #ffffff99;
+	position: absolute;
+	width: 32px;
+	height: 32px;
+	top: 63px;
+	left: 10px;
+}
+
+#random-button:hover {
 	color: #ffffffff;
 	pointer: pointer;
 }

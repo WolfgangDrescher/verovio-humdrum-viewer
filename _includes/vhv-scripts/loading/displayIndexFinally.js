@@ -110,12 +110,39 @@ function displayIndexFinally(index, location) {
 		final += "</td></tr>"
 	}
 	final += "</table>";
-	let button = `<button id="close-button" onclick="hideRepertoryIndex()"><i class="fas fa-times"></i></button>`;
+	let button = `<button title="close index (esc key)" id="close-button" onclick="hideRepertoryIndex()"><i class="fas fa-times"></i></button>`;
+	button += `<button title="display random entry from index" id="random-button" onclick="chooseRandomEntry()"><i class="fas fa-random"></i></button>`;
 	final = `${button}<div id="index-table-wrapper">${final}</div>`;
 	var indexelem = document.querySelector("#index");
 	indexelem.innerHTML = final;
 	indexelem.style.visibility = "visible";
 	indexelem.style.display = "block";
 }
+
+
+
+//////////////////////////////
+//
+// chooseRandomEntry -- 
+//
+
+function chooseRandomEntry() {
+	let table = document.querySelector("table.index-list");
+	if (!table) {
+		return;
+	}
+	let list = table.querySelectorAll(".ilink");
+	if (list.length == 0) {
+		return;
+	}
+	let randomNumber = Math.floor(Math.random() * list.length);
+	let text = list[randomNumber].outerHTML;
+	let matches = text.match(/displayWork.['"](.*?)['"]/);
+	if (matches) {
+		let entry = matches[1];
+		displayWork(entry);
+	}
+}
+
 
 
