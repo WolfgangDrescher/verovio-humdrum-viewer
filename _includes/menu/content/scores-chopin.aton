@@ -1,0 +1,96 @@
+
+@@BEGIN: ENTRY
+@@BEGIN: TEXT
+@DEFAULT:		Chopin First Editions
+@AR:
+@CA:
+@CS:
+@DE:
+@DK:
+@EL:
+@EN:
+@ES:			Primeras ediciones de Chopin
+@ET:
+@EU:
+@FI:
+@FR:
+@HE:
+@HI:
+@ID:
+@IT:
+@JA:
+@KO:
+@LT:
+@LV:
+@NL:
+@NO:
+@PL:
+@PT:
+@RU:
+@SK:
+@SV:
+@TR:
+@UK:
+@VI:
+@ZH-simplified:
+@ZH-traditional:
+@ZH-traditional:
+@ACTION:		MENU.loadRepertory('chopin-first-editions')
+@@END: TEXT
+@@BEGIN: RIGHT_TEXT
+@TYPE:			website
+@LINK: 			https://humdrum.nifc.pl
+@@END: RIGHT_TEXT
+@@BEGIN: RIGHT_TEXT
+@TYPE:			github
+@LINK:			https://github.com/pl-wnifc/humdrum-chopin-first-editions
+@@END: RIGHT_TEXT
+@@END: ENTRY
+
+
+@@BEGIN: ENTRY
+@@BEGIN: TEXT
+@DEFAULT:		Chopin mazurkas
+@AR:
+@CA:
+@CS:
+@DE:
+@DK:
+@EL:
+@EN:
+@ES:			Mazurcas de Chopin
+@ET:
+@EU:
+@FI:
+@FR:
+@HE:
+@HI:
+@ID:
+@IT:
+@JA:
+@KO:
+@LT:
+@LV:
+@NL:
+@NO:
+@PL:			Mazurki Chopina
+@PT:
+@RU:
+@SK:
+@SV:
+@TR:
+@UK:
+@VI:
+@ZH-simplified:
+@ZH-traditional:
+@ZH-traditional:
+@ZH-traditional:
+@ACTION:		MENU.loadRepertory('chopin/mazurkas')
+@@END: TEXT
+@@BEGIN: RIGHT_TEXT
+@TYPE:			github
+@LINK:			https://github.com/craigsapp/chopin-mazurkas
+@@END: RIGHT_TEXT
+@@END: ENTRY
+
+

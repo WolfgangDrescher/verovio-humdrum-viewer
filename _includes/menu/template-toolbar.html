@@ -158,11 +158,11 @@
 
 <!-- ==== page navigation ==================================================== -->
 
-<div class="multipage" id="multi-page" style="margin-left:12px; margin-right:40px !important;">
-	<table>
+<div class="multipage" id="multi-page" style="width:72px">
+	<table style="width:100%">
 		<tr>
-			<td onclick="MENU.multiPageView()">
-				<div title="switch to multi-page mode (better for MIDI playback)" style="font-size:150%" class="nav-icon fas fa-map"></div>
+			<td style="width:100%;" onclick="MENU.multiPageView()">
+				<center><div title="switch to multi-page mode (better for MIDI playback)" style="margin-left:auto; margin-right:auto; font-size:125%" class="nav-icon fas fa-map"></div></center>
 			</td>
 		</tr>
 	</table>
@@ -171,13 +171,13 @@
 	<table class="multipage">
 		<tr>
 			<td onclick="previousPageClick(event)">
-				<div title="Previous page (shift-click for first page)" style="font-size:150%" class="nav-icon fas fa-arrow-left"></div>
+				<div title="Previous page (shift-click for first page)" style="font-size:110%" class="nav-icon fas fa-arrow-left"></div>
 			</td>
   			<td onclick="MENU.singlePageView()">
 				<div title="switch to single-page mode" style="font-size:125%" class="nav-icon fas fa-file-alt"></div>
 			</td>
   			<td onclick="nextPageClick(event)">
-				<div title="Next page (shift-click for last page)" style="font-size:150%" class="nav-icon fas fa-arrow-right"></div>
+				<div title="Next page (shift-click for last page)" style="font-size:110%" class="nav-icon fas fa-arrow-right"></div>
 			</td>
 		</tr>
 	</table>

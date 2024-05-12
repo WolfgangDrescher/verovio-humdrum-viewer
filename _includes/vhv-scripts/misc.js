@@ -585,7 +585,39 @@ function displayFileTitle(contents) {
 		} else {
 			composer = references["COM"];
 		}
+	} else if (references["COS"] && !references["COS"].match(/^\s*$/)) {
+		// Suspected composer
+		if (matches = references["COS"].match(/^\s*([^,]+),/)) {
+			composer = matches[1] + "?";
+		} else {
+			composer = references["COS"] + "?";
+		}
+	} else if (references["COA"] && !references["COA"].match(/^\s*$/)) {
+		// Attributed composer
+		if (matches = references["COA"].match(/^\s*([^,]+),/)) {
+			composer = matches[1] + "?";
+		} else {
+			composer = references["COA"] + "?";
+		}
+	} else if (references["COA1"] && !references["COA1"].match(/^\s*$/)) {
+		// First attributed composer
+		if (matches = references["COA1"].match(/^\s*([^,]+),/)) {
+			composer = matches[1] + "?";
+		} else {
+			composer = references["COA1"] + "?";
+		}
+		if (references["COA2"] && !references["COA2"].match(/^\s*$/)) {
+			// Second attributed composer
+			if (matches = references["COA2"].match(/^\s*([^,]+),/)) {
+				composer += "/" + matches[1] + "?";
+			} else {
+				composer += "/" + references["COA2"] + "?";
+			}
+		}
 	}
+
+	composer = composer.replace(/Gaspar van Weerbeke/, "Gaspar", "g");
+	composer = composer.replace(/Josquin des Prez/, "Josquin", "g");
 
 	title = title.replace(/-sharp/g, "&#9839;");
 	title = title.replace(/-flat/g, "&#9837;");

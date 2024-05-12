@@ -776,7 +776,6 @@ span.ilink {
 }
 
 .mbutton {
-	margin-right: 10px;
 	margin-left: 10px;
 }
 
@@ -795,8 +794,8 @@ span.ilink {
 
 .nav-play-button {
 	position: fixed;
-	top:0;
-	right: 45px;
+	top: -1px;
+	right: 68.5px;
 	float: left;
 	color: white;
 	opacity: 0.6;
@@ -837,18 +836,41 @@ span.ilink {
 
 div#index {
 	width: 80%;
+	height: 100vh;
 	min-width: 600px;
-	left-margin: auto;
-	right-margin: auto;
+	margin-left: auto;
+	margin-right: auto;
 	background: cornsilk;
 	opacity: 0.95;
 	border: 1px solid #000;
 	z-index: 9999;
 	padding-top: 20px;
+	padding-left: 0;
+	padding-right: 0;
 	margin-top: -20px;
+	overflow: hidden;
+	position: relative;
+}
+
+div#index-table-wrapper {
 	padding-left: 50px;
 	padding-right: 50px;
-	overflow: scroll;
+	height: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+#close-button {
+	background: #01313f;
+	color: #ffffff99;
+	position: absolute;
+	top: 30px;
+	left: 10px;
+}
+
+#close-button:hover {
+	color: #ffffffff;
+	pointer: pointer;
 }
 
 #output svg g.dir.problem tspan.rend tspan.text tspan.text.p {

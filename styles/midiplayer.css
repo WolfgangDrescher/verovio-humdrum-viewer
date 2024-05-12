@@ -52,4 +52,10 @@
 	color: hotpink !important;
 }
 
+#midiPlayer_div a.mbutton.play, 
+#midiPlayer_div a.mbutton.pause {
+	width: 15px !important;
+
+}
+
 

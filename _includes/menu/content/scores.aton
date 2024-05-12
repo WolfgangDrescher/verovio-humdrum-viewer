@@ -7,7 +7,7 @@
 
 @@BEGIN: ENTRY
 @@BEGIN: TEXT
-@DEFAULT:		Bach, Johnann Sebastian
+@DEFAULT:		Bach, Johnann Sebastian (1685&ndash;1750)
 @AR:
 @CA:
 @CS:
@@ -57,7 +57,7 @@
 
 @@BEGIN: ENTRY
 @@BEGIN: TEXT
-@DEFAULT:		Beethoven piano sonatas
+@DEFAULT:		Beethoven, Ludwig van (1770&ndash;1827)
 @AR:
 @CA:
 @CS:
@@ -65,97 +65,7 @@
 @DK:
 @EL:
 @EN:
-@ES:			Sonatas para piano de Beethoven
-@ET:
-@EU:
-@FI:
-@FR:
-@HE:
-@HI:
-@ID:
-@IT:
-@JA:
-@KO:
-@LT:
-@LV:
-@NL:
-@NO:
-@PL:			Sonaty fortepianowe Beethovena
-@PT:
-@RU:
-@SK:
-@SV:
-@TR:
-@UK:
-@VI:
-@ZH-simplified:
-@ZH-traditional:
-@ZH-traditional:
-@ACTION:		MENU.loadRepertory('beethoven/sonatas')
-@@END: TEXT
-@@BEGIN: RIGHT_TEXT
-@TYPE:			github
-@LINK:			https://github.com/craigsapp/beethoven-piano-sonatas
-@@END: RIGHT_TEXT
-@@END: ENTRY
-
-
-@@BEGIN: ENTRY
-@@BEGIN: TEXT
-@DEFAULT:		Beethoven string quartets
-@AR:
-@CA:
-@CS:
-@DE:
-@DK:
-@EL:
-@EN:
-@ES:			Cuartetos de cuerda de Beethoven
-@ET:
-@EU:
-@FI:
-@FR:
-@HE:
-@HI:
-@ID:
-@IT:
-@JA:
-@KO:
-@LT:
-@LV:
-@NL:
-@NO:
-@PL:			Kwartety smyczkowe Beethovena
-@PT:
-@RU:
-@SK:
-@SV:
-@TR:
-@UK:
-@VI:
-@ZH-simplified:
-@ZH-traditional:
-@ZH-traditional:
-@ACTION:		MENU.loadRepertory('beethoven/quartets')
-@@END: TEXT
-@@BEGIN: RIGHT_TEXT
-@TYPE:			github
-@LINK:			https://github.com/craigsapp/beethoven-string-quartets
-@@END: RIGHT_TEXT
-@@END: ENTRY
-
-
-@@BEGIN: ENTRY
-@@BEGIN: TEXT
-@DEFAULT:		Chopin First Editions
-@AR:
-@CA:
-@CS:
-@DE:
-@DK:
-@EL:
-@EN:
-@ES:			Primeras ediciones de Chopin
+@ES:
 @ET:
 @EU:
 @FI:
@@ -180,23 +90,23 @@
 @VI:
 @ZH-simplified:
 @ZH-traditional:
-@ZH-traditional:
-@ACTION:		MENU.loadRepertory('chopin-first-editions')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
-@TYPE:			website
-@LINK: 			https://humdrum.nifc.pl
+@TYPE:
+@LINK:
 @@END: RIGHT_TEXT
 @@BEGIN: RIGHT_TEXT
-@TYPE:			github
-@LINK:			https://github.com/pl-wnifc/humdrum-chopin-first-editions
+@TYPE:
+@LINK:
 @@END: RIGHT_TEXT
+@@BEGIN: SUBMENU
+{% include menu/content/scores-beethoven.aton %}
+@@END: SUBMENU
 @@END: ENTRY
-
 
 @@BEGIN: ENTRY
 @@BEGIN: TEXT
-@DEFAULT:		Chopin mazurkas
+@DEFAULT:		Chopin, Fryderyk (1810&ndash;1849)
 @AR:
 @CA:
 @CS:
@@ -204,7 +114,7 @@
 @DK:
 @EL:
 @EN:
-@ES:			Mazurcas de Chopin
+@ES:
 @ET:
 @EU:
 @FI:
@@ -219,7 +129,7 @@
 @LV:
 @NL:
 @NO:
-@PL:			Mazurki Chopina
+@PL:
 @PT:
 @RU:
 @SK:
@@ -229,20 +139,24 @@
 @VI:
 @ZH-simplified:
 @ZH-traditional:
-@ZH-traditional:
-@ZH-traditional:
-@ACTION:		MENU.loadRepertory('chopin/mazurkas')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
-@TYPE:			github
-@LINK:			https://github.com/craigsapp/chopin-mazurkas
+@TYPE:
+@LINK:
 @@END: RIGHT_TEXT
+@@BEGIN: RIGHT_TEXT
+@TYPE:
+@LINK:
+@@END: RIGHT_TEXT
+@@BEGIN: SUBMENU
+{% include menu/content/scores-chopin.aton %}
+@@END: SUBMENU
 @@END: ENTRY
 
 
 @@BEGIN: ENTRY
 @@BEGIN: TEXT
-@DEFAULT:		Corelli, Arcangelo
+@DEFAULT:		Corelli, Arcangelo (1653&ndash;1713)
 @AR:
 @CA:
 @CS:
@@ -431,7 +345,7 @@
 
 @@BEGIN: ENTRY
 @@BEGIN: TEXT
-@DEFAULT:		Joplin
+@DEFAULT:		Joplin, Scott (1868&ndash;1917)
 @AR:
 @CA:
 @CS:
@@ -439,7 +353,7 @@
 @DK:
 @EL:
 @EN:
-@ES:			Joplin
+@ES:			Joplin, Scott (1868&ndash;1917)
 @ET:
 @EU:
 @FI:
@@ -526,7 +440,7 @@
 
 @@BEGIN: ENTRY
 @@BEGIN: TEXT
-@DEFAULT:		Mozart piano sonatas
+@DEFAULT:		Mozart, Wolfgang (1756&ndash;1791)
 @AR:
 @CA:
 @CS:
@@ -534,52 +448,7 @@
 @DK:
 @EL:
 @EN:
-@ES:			Sonatas para piano de Mozart
-@ET:
-@EU:
-@FI:
-@FR:
-@HE:
-@HI:
-@ID:
-@IT:
-@JA:
-@KO:
-@LT:
-@LV:
-@NL:
-@NO:
-@PL:			Sonaty fortepianowe Mozarta
-@PT:
-@RU:
-@SK:
-@SV:
-@TR:
-@UK:
-@VI:
-@ZH-simplified:
-@ZH-traditional:
-@ZH-traditional:
-@ACTION:		MENU.loadRepertory('mozart/sonatas')
-@@END: TEXT
-@@BEGIN: RIGHT_TEXT
-@TYPE:			github
-@LINK:			https://github.com/craigsapp/mozart-piano-sonatas
-@@END: RIGHT_TEXT
-@@END: ENTRY
-
-
-@@BEGIN: ENTRY
-@@BEGIN: TEXT
-@DEFAULT:		Mozart, 100 Contradances, K<sup>6</sup> Anh. C30.01
-@AR:
-@CA:
-@CS:
-@DE:
-@DK:
-@EL:
-@EN:
-@ES:			Mozart, 100 Contradanzas, K<sup>6</sup> Anh. C30.01
+@ES:
 @ET:
 @EU:
 @FI:
@@ -604,46 +473,18 @@
 @VI:
 @ZH-simplified:
 @ZH-traditional:
-@ZH-traditional:
-@ACTION:		MENU.loadRepertory('mozart/sonatas')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
-@DEFAULT:		<i>measures</i>
-@AR:
-@CA:
-@CS:
-@DE:
-@DK:
-@EL:
-@EN:
-@ES:			<i>compases</i>
-@ET:
-@EU:
-@FI:
-@FR:
-@HE:
-@HI:
-@ID:
-@IT:
-@JA:
-@KO:
-@LT:
-@LV:
-@NL:
-@NO:
-@PL:
-@PT:
-@RU:
-@SK:
-@SV:
-@TR:
-@UK:
-@VI:
-@ZH-simplified:
-@ZH-traditional:
-@ZH-traditional:
-@ACTION:		MENU.loadRepertory('users/craig/dice/mozart/cda/measures')
+@TYPE:
+@LINK:
 @@END: RIGHT_TEXT
+@@BEGIN: RIGHT_TEXT
+@TYPE:
+@LINK:
+@@END: RIGHT_TEXT
+@@BEGIN: SUBMENU
+{% include menu/content/scores-mozart.aton %}
+@@END: SUBMENU
 @@END: ENTRY
 
 
@@ -695,7 +536,7 @@
 
 @@BEGIN: ENTRY
 @@BEGIN: TEXT
-@DEFAULT:		Vivaldi, Antonio
+@DEFAULT:		Vivaldi, Antonio (1678&ndash;1741)
 @AR:
 @CA:
 @CS:

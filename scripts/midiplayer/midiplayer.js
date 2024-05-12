@@ -417,11 +417,11 @@ function runConversion() {
 		$("#midiPlayer_div").append("<div id='midiPlayer_playingTime'>0:00</div>")
 			.append("<div id='midiPlayer_bar'><div id='midiPlayer_progress'></div></div>")
 			.append("<div id='midiPlayer_totalTime'>0:00</div>")
-			.append("<a class='mbutton icon play' id='midiPlayer_play' onclick='play()'><span class='fas fa-play'></span></a>")
+			.append("<a class='mbutton icon play zzz' id='midiPlayer_play' onclick='play()'><span class='fas fa-play'></span></a>")
 			.append("<a class='mbutton icon pause' id='midiPlayer_pause' onclick='pause()'><span class='fas fa-pause'></span></a>")
 			.append("<a class='mbutton icon stop' id='midiPlayer_stop' onclick='stop()'><span class='fas fa-stop'></span></a>");
 
-		$("#midiPlayer_div").css("width", options.width + 200);
+		$("#midiPlayer_div").css("width", options.width + 100);
 		$("#midiPlayer_bar").css("width", options.width);
 		$("#midiPlayer_progress").css("background", options.color);
 

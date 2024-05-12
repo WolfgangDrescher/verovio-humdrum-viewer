@@ -110,6 +110,8 @@ function displayIndexFinally(index, location) {
 		final += "</td></tr>"
 	}
 	final += "</table>";
+	let button = `<button id="close-button" onclick="hideRepertoryIndex()"><i class="fas fa-times"></i></button>`;
+	final = `${button}<div id="index-table-wrapper">${final}</div>`;
 	var indexelem = document.querySelector("#index");
 	indexelem.innerHTML = final;
 	indexelem.style.visibility = "visible";

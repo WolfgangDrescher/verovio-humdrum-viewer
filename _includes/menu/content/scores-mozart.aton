@@ -1,0 +1,123 @@
+
+
+@@BEGIN: ENTRY
+@@BEGIN: TEXT
+@DEFAULT:		Mozart piano sonatas
+@AR:
+@CA:
+@CS:
+@DE:
+@DK:
+@EL:
+@EN:
+@ES:			Sonatas para piano de Mozart
+@ET:
+@EU:
+@FI:
+@FR:
+@HE:
+@HI:
+@ID:
+@IT:
+@JA:
+@KO:
+@LT:
+@LV:
+@NL:
+@NO:
+@PL:			Sonaty fortepianowe Mozarta
+@PT:
+@RU:
+@SK:
+@SV:
+@TR:
+@UK:
+@VI:
+@ZH-simplified:
+@ZH-traditional:
+@ZH-traditional:
+@ACTION:		MENU.loadRepertory('mozart/sonatas')
+@@END: TEXT
+@@BEGIN: RIGHT_TEXT
+@TYPE:			github
+@LINK:			https://github.com/craigsapp/mozart-piano-sonatas
+@@END: RIGHT_TEXT
+@@END: ENTRY
+
+
+@@BEGIN: ENTRY
+@@BEGIN: TEXT
+@DEFAULT:		Mozart, 100 Contradances, K<sup>6</sup> Anh. C30.01
+@AR:
+@CA:
+@CS:
+@DE:
+@DK:
+@EL:
+@EN:
+@ES:			Mozart, 100 Contradanzas, K<sup>6</sup> Anh. C30.01
+@ET:
+@EU:
+@FI:
+@FR:
+@HE:
+@HI:
+@ID:
+@IT:
+@JA:
+@KO:
+@LT:
+@LV:
+@NL:
+@NO:
+@PL:
+@PT:
+@RU:
+@SK:
+@SV:
+@TR:
+@UK:
+@VI:
+@ZH-simplified:
+@ZH-traditional:
+@ZH-traditional:
+@ACTION:		MENU.loadRepertory('mozart/sonatas')
+@@END: TEXT
+@@BEGIN: RIGHT_TEXT
+@DEFAULT:		<i>measures</i>
+@AR:
+@CA:
+@CS:
+@DE:
+@DK:
+@EL:
+@EN:
+@ES:			<i>compases</i>
+@ET:
+@EU:
+@FI:
+@FR:
+@HE:
+@HI:
+@ID:
+@IT:
+@JA:
+@KO:
+@LT:
+@LV:
+@NL:
+@NO:
+@PL:
+@PT:
+@RU:
+@SK:
+@SV:
+@TR:
+@UK:
+@VI:
+@ZH-simplified:
+@ZH-traditional:
+@ZH-traditional:
+@ACTION:		MENU.loadRepertory('users/craig/dice/mozart/cda/measures')
+@@END: RIGHT_TEXT
+@@END: ENTRY
