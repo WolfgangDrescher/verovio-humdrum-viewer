@@ -36,7 +36,7 @@
 @ZH-simplified:
 @ZH-traditional:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('essen/europa/czech')
+@ACTION:		MENU.loadRepertory(event, 'essen/europa/czech')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			github
@@ -81,7 +81,7 @@
 @ZH-simplified:
 @ZH-traditional:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('essen/europa/schweiz')
+@ACTION:		MENU.loadRepertory(event, 'essen/europa/schweiz')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			github
@@ -126,7 +126,7 @@
 @ZH-simplified:
 @ZH-traditional:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('essen/america/usa')
+@ACTION:		MENU.loadRepertory(event, 'essen/america/usa')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			github

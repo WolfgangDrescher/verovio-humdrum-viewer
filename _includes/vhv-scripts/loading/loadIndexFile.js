@@ -6,7 +6,8 @@
 // loadIndexFile --
 //
 
-function loadIndexFile(location) {
+function loadIndexFile(location, options) {
+console.warn("ENTERING LOADINDEXFILE options = ", options, GITHUB_LINKS);
 	if (location.match(/index.hmd$/)) {
 		loadHmdIndexFile(location);
 		return;
@@ -25,11 +26,12 @@ function loadIndexFile(location) {
 	let request = new XMLHttpRequest();
 	request.open("GET", url);
 	request.addEventListener("load", function() {
+console.log("GOT HERE AAA", options);
 		if (request.status == 200) {
 			let INDEX = request.responseText;
 			// console.log("INDEX= ", INDEX);
 			$('html').css('cursor', 'auto');
-			displayIndexFinally(INDEX, location);
+			displayIndexFinally(INDEX, location, options);
 		}
 	});
 	request.send();

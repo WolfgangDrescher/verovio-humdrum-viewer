@@ -679,13 +679,14 @@ function displayWork(file) {
 // displayIndex --
 //
 
-function displayIndex(directory) {
+function displayIndex(directory, options) {
+console.warn("DIPLAYINDEX options = ", options);
 	ShowingIndex = true;
 	if (!directory) {
 		return;
 	}
 	$('html').css('cursor', 'wait');
-	loadIndexFile(directory);
+	loadIndexFile(directory, options);
 }
 
 

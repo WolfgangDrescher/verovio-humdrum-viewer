@@ -5,7 +5,8 @@
 // displayIndexFinally --
 //
 
-function displayIndexFinally(index, location) {
+function displayIndexFinally(index, location, options) {
+console.log("OPTIONS", options, JSON.stringify(GITHUB_LINKS));
 	ShowingIndex = true;
 
 	IndexSupressOfInput = true;
@@ -15,6 +16,10 @@ function displayIndexFinally(index, location) {
 		// hideInputArea(true);
 	}
 
+	var file = "";
+	if (options) {
+		file = options.file;
+	}
 	var matches;
 	var lines = index.split(/\r?\n/);
 	var i;
@@ -110,8 +115,60 @@ function displayIndexFinally(index, location) {
 		final += "</td></tr>"
 	}
 	final += "</table>";
-	let button = `<button title="close index (esc key)" id="close-button" onclick="hideRepertoryIndex()"><i class="fas fa-times"></i></button>`;
-	button += `<button title="display random entry from index" id="random-button" onclick="chooseRandomEntry()"><i class="fas fa-random"></i></button>`;
+
+	let cssTop = 30;
+	let buttonCount = 0;
+
+	// close button (always)
+	let button = `<button title="close index (esc key)" style="top:${cssTop + 33 * buttonCount}px" id="close-button" onclick="hideRepertoryIndex()"><i class="fas fa-times"></i></button>`;
+	buttonCount++;
+
+	// random button (always)
+	button += `<button title="display random entry from index" style="top:${cssTop + 33 * buttonCount}px" id="random-button" onclick="chooseRandomEntry()"><i class="fas fa-random"></i></button>`;
+	buttonCount++;
+
+	if (options && options.event) {
+		let target = options.event.target;
+
+		if (target && target.dataset.website) {
+			let website = target.dataset.website;
+			if (!(website && website.match(/^\s*$/))) {
+				button += `<button title="view reperotory website" style="top:${cssTop + 33 * buttonCount}px" id="website-button">`;
+				button += `<a target="_blank" href="${website}">`;
+				button += `<i title="view repertory website" class="fas fa-desktop"></i></a>`;
+				button += `</button>`;
+				buttonCount++;
+			}
+		}
+
+		if (target && target.dataset.github) {
+			let github = target.dataset.github;
+			if (!(github && github.match(/^\s*$/))) {
+				button += `<button title="view github repository for repertory" style="top:${cssTop + 33 * buttonCount}px" id="github-button">`;
+				button += `<a target="_blank" href="${github}">`;
+				button += `<i title="view github repository for repertory" class="fas fa-cloud"></i></a>`;
+				button += `</button>`;
+				buttonCount++;
+			}
+		}
+	} else {
+		if (WEBSITE_LINKS[file]) {
+			button += `<button title="view reperotory website" style="top:${cssTop + 33 * buttonCount}px" id="website-button">`;
+			button += `<a target="_blank" href="${WEBSITE_LINKS[file]}">`;
+			button += `<i title="view repertory website" class="fas fa-desktop"></i></a>`;
+			button += `</button>`;
+			buttonCount++;
+		}
+
+		if (GITHUB_LINKS[file]) {
+			button += `<button title="view github repository for repertory" style="top:${cssTop + 33 * buttonCount}px" id="github-button">`;
+			button += `<a target="_blank" href="${GITHUB_LINKS[file]}">`;
+			button += `<i title="view github repository for repertory" class="fas fa-cloud"></i></a>`;
+			button += `</button>`;
+			buttonCount++;
+		}
+	}
+
 	final = `${button}<div id="index-table-wrapper">${final}</div>`;
 	var indexelem = document.querySelector("#index");
 	indexelem.innerHTML = final;

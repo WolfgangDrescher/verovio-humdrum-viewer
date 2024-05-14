@@ -10,6 +10,7 @@
 //
 
 function getGithubUrl(file, measures) {
+console.warn("ENTERING GETGITHUBURL");
 
 	file = file.replace(/^github:\/*/, "");
 
@@ -31,6 +32,7 @@ function getGithubUrl(file, measures) {
 	url += "/master/";
 	if (!pathandfile) {
 		url += ".ref";
+console.warn("GOT HERE JJJ");
 		loadIndexFile(url);
 		return;
 	} else {

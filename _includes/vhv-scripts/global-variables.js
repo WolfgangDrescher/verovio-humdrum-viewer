@@ -413,7 +413,6 @@ console.log("EVENT", event);
 	// text that uses the alt key to create characters...
 
 	if (event.altKey) {
-console.log("GOT HERE CCC", event);
 		if ((key == "›") && (code == "KeyZ")) {
 			return KEYS.YKey;
 		} 
@@ -421,19 +420,12 @@ console.log("GOT HERE CCC", event);
 			return KEYS.ZKey;
 		}
 		if ((key == "∫") && (code == "KeyB")) {
-console.log("GOT HERE BBB", event);
 			return KEYS.BKey;
 		} 
 	}
 
-console.log("GOT HERE AAA", event);
-
 	return event.code;
 }
-
-
-
-
 
 
 

@@ -72,6 +72,8 @@ single-entry example:
 							<a class=" dropdown-item dropdown-toggle " href="#"
 						{{else}}
 							<span class="menu-item"
+							{{{websiteData RIGHT_TEXT TEXT.ACTION}}}
+							{{{githubData RIGHT_TEXT TEXT.ACTION}}}
 						{{/if}}
 						{{#if TEXT.ACTION}} onclick="{{{TEXT.ACTION}}}"
 						{{else}}
@@ -151,7 +153,7 @@ single-entry example:
 								{{#if LINK}}
 									<a target="_blank" href="{{{languageText LINK}}}">
 								{{/if}}
-								<i title="View reperotry website" class="fas fa-desktop"></i>
+								<i title="view repertory website" class="fas fa-desktop"></i>
 								{{#if LINK}}
 									</a>
 								{{/if}}
@@ -332,6 +334,65 @@ Handlebars.registerHelper('printObject', function(message, object)  {
 	console.log("MESSAGE:", message, "OBJECT:", object);
 });
 
+
+//////////////////////////////
+//
+// githubData -- extract data-website="https://some-website.com"
+//
+
+Handlebars.registerHelper('githubData', function(rightText, action) {
+	if (!rightText) {
+		return new Handlebars.SafeString("");
+	}
+	for (let i=0; i<rightText.length; i++) {
+		if (rightText[i].TYPE && rightText[i].TYPE === "github") {
+			let url = rightText[i].LINK;
+			if (url) {
+				let output = `data-github="${url}"`;
+				if (action) {
+					let matches = action.match(/MENU\.loadRepertory\(.*?['"](.*?)['"]\)/);
+					if (matches) {
+						GITHUB_LINKS[matches[1]] = url;
+					}
+				}
+				return output;
+			}
+		}
+	}
+	return new Handlebars.SafeString("");
+});
+
+
+
+//////////////////////////////
+//
+// websiteData --
+//
+
+Handlebars.registerHelper('websiteData', function(rightText, action) {
+	if (!rightText) {
+		return new Handlebars.SafeString("");
+	}
+	for (let i=0; i<rightText.length; i++) {
+		if (rightText[i].TYPE && rightText[i].TYPE === "website") {
+			let url = rightText[i].LINK;
+			if (url) {
+				let output = `data-website="${url}"`;
+				if (action) {
+					let matches = action.match(/MENU\.loadRepertory\(.*?['"](.*?)['"]\)/);
+					if (matches) {
+						WEBSITE_LINKS[matches[1]] = url;
+					}
+				}
+				return output;
+			}
+		}
+	}
+	return new Handlebars.SafeString("");
+});
+
+
 </script>
+
 
 

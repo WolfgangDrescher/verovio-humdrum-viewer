@@ -4,7 +4,7 @@
 // displayHmdIndexFinally --
 //
 
-function displayHmdIndexFinally(hmdindex, source) {
+function displayHmdIndexFinally(hmdindex, source, options) {
 	if (!hmdindex.parameters.hmdindexurl) {
 		hmdindex.parameters.hmdindexurl = source;
 	}

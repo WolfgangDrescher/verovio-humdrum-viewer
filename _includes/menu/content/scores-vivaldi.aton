@@ -36,7 +36,7 @@
 @ZH-simplified:
 @ZH-traditional:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('vivaldi/op01')
+@ACTION:		MENU.loadRepertory(event, 'vivaldi/op01')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			website
@@ -85,7 +85,7 @@
 @ZH-simplified:
 @ZH-traditional:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('vivaldi/op02')
+@ACTION:		MENU.loadRepertory(event, 'vivaldi/op02')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			website

@@ -240,7 +240,7 @@
 @ZH-simplified:
 @ZH-traditional:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('gaspar')
+@ACTION:		MENU.loadRepertory(event, 'gaspar')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			website
@@ -289,7 +289,7 @@
 @ZH-simplified:
 @ZH-traditional:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('haydn/sonatas')
+@ACTION:		MENU.loadRepertory(event, 'haydn/sonatas')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			github
@@ -334,7 +334,7 @@
 @ZH-simplified:
 @ZH-traditional:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('hummel/preludes')
+@ACTION:		MENU.loadRepertory(event, 'hummel/preludes')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			github
@@ -379,7 +379,7 @@
 @ZH-simplified:
 @ZH-traditional:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('joplin')
+@ACTION:		MENU.loadRepertory(event, 'joplin')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			github
@@ -425,7 +425,7 @@
 @ZH-simplified:
 @ZH-traditional:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('lassus/psalms')
+@ACTION:		MENU.loadRepertory(event, 'lassus/psalms')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			website
@@ -525,7 +525,7 @@
 @ZH-traditional:
 @ZH-traditional:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('scarlatti/sonatas')
+@ACTION:		MENU.loadRepertory(event, 'scarlatti/sonatas')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			github
@@ -571,12 +571,12 @@
 @ZH-traditional:
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
-@TYPE:
-@LINK:
+@TYPE: website
+@LINK: https://vivaldi.ccarh.org
 @@END: RIGHT_TEXT
 @@BEGIN: RIGHT_TEXT
-@TYPE:
-@LINK:
+@TYPE: github
+@LINK: https://github.com/musedata/vivaldi
 @@END: RIGHT_TEXT
 @@BEGIN: SUBMENU
 {% include menu/content/scores-vivaldi.aton %}
@@ -769,11 +769,11 @@
 @VI:
 @ZH-simplified:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('1520s')
+@ACTION:		MENU.loadRepertory(event, '1520s')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			website
-@LINK:			https://www.1520s-project.com
+@LINK:			https://www.1520s-project.org
 @@END: RIGHT_TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			github
@@ -870,7 +870,7 @@
 @ZH-simplified:
 @ZH-traditional:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('poly')
+@ACTION:		MENU.loadRepertory(event, 'poly')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			website

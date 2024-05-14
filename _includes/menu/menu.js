@@ -8,6 +8,8 @@ let MENU = new MenuInterface();
 let MENUDATA = { };
 let LANGUAGE = "DEFAULT";
 let DICTIONARY = {};
+let GITHUB_LINKS = {};
+let WEBSITE_LINKS = {};
 let COMPILEFILTERAUTOMATIC = false;
 
 function MenuInterface() {
@@ -366,11 +368,13 @@ MenuInterface.prototype.saveSvgData = function () {
 // MenuInterface::loadRepertory --
 //
 
-MenuInterface.prototype.loadRepertory = function (repertory, filter) {
+MenuInterface.prototype.loadRepertory = function (event, repertory, filter) {
+	console.log("EVENT", event);
 	let options = {
-			file: repertory,
-			next: true,
-			previous: true
+			"file":     repertory,
+			"next":     true,
+			"previous": true,
+			"event":    event
 		}
 	if (filter) {
 		options.filter = filter;

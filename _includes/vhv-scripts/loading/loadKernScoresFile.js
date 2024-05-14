@@ -5,21 +5,22 @@
 // loadKernScoresFile --
 //
 
-function loadKernScoresFile(obj, force) {
+function loadKernScoresFile(options, force) {
+console.warn("ENTERING LOADKERNSCORESFILE", options);
 	// Allow redirect of Github links to raw file:
 
-	if (obj.file) {
-		let matches = obj.file.match(/^https?:\/\/github.com\/(.*?)\/(.*?)\/(?:blob|tree)\/(.*?)\/(.*)$/);
+	if (options.file) {
+		let matches = options.file.match(/^https?:\/\/github.com\/(.*?)\/(.*?)\/(?:blob|tree)\/(.*?)\/(.*)$/);
 		if (matches) {
 			let account = matches[1];
 			let repo    = matches[2];
 			let branch  = matches[3];
 			let rest    = matches[4];
-			obj.file = `https://raw.githubusercontent.com/${account}/${repo}/${branch}/${rest}`;
+			options.file = `https://raw.githubusercontent.com/${account}/${repo}/${branch}/${rest}`;
 		}
 	}
 
-	let file = obj.file;
+	let file = options.file;
 
 	let matches = file.match(/poly\/[RT]?(\d+[^_]*)$/);
 	if (matches) {
@@ -27,20 +28,20 @@ function loadKernScoresFile(obj, force) {
 	}
 
 	if (!file) {
-		if (obj.bb) {
-			file = `bitbucket:${obj.bb}`;
-		} else if (obj.bitbucket) {
-			file = `bitbucket:${obj.bitbucket}`;
-		} else if (obj.github) {
-			file = `github:${obj.github}`;
-		} else if (obj.gh) {
-			file = `github:${obj.gh}`;
-		} else if (obj.jrp) {
-			file = `jrp:${obj.jrp}`;
-		} else if (obj.poly) {
-			file = getPolyFile(obj.poly);
-		} else if (obj.tasso) {
-			file = `tasso:${obj.tasso}`;
+		if (options.bb) {
+			file = `bitbucket:${options.bb}`;
+		} else if (options.bitbucket) {
+			file = `bitbucket:${options.bitbucket}`;
+		} else if (options.github) {
+			file = `github:${options.github}`;
+		} else if (options.gh) {
+			file = `github:${options.gh}`;
+		} else if (options.jrp) {
+			file = `jrp:${options.jrp}`;
+		} else if (options.poly) {
+			file = getPolyFile(options.poly);
+		} else if (options.tasso) {
+			file = `tasso:${options.tasso}`;
 		}
 	}
 	if (!file) {
@@ -48,12 +49,14 @@ function loadKernScoresFile(obj, force) {
 		return;
 	}
 
-	let measures    = obj.measures;
-	let page        = obj.page;
-	let getnext     = obj.next;
-	let getprevious = obj.previous;
+	let measures    = options.measures;
+	let page        = options.page;
+	let getnext     = options.next;
+	let getprevious = options.previous;
 
+console.warn("GOT HERE MMM");
 	file = applyUrlAliases(file);
+console.warn("GOT HERE NNN");
 
 	if (measures) {
 		let getnext     = false;
@@ -98,7 +101,8 @@ function loadKernScoresFile(obj, force) {
 			key = ret.key;
 		}
 	} else {
-		ret = kernScoresUrl(file, measures);
+		ret = kernScoresUrl(file, measures, options);
+console.error("GOT HERE OOO");
 		if (ret) {
 			url = ret.url;
 			key = ret.url;
@@ -131,7 +135,7 @@ function loadKernScoresFile(obj, force) {
 	// let info = null;
 	// console.log("INFO", info)
 
-	if (obj && obj.file && (obj.file.match(/musedata/))) {
+	if (options && options.file && (options.file.match(/musedata/))) {
 		// console.log("Going to download3", key);
 		basketSession.require(...requires).then(function() {
 			let infos = [];
@@ -189,7 +193,7 @@ function loadKernScoresFile(obj, force) {
 							}
 						}
 						if (getnext) {
-							processInfo(jinfo, obj, false, false);
+							processInfo(jinfo, options, false, false);
 						}
 					} catch(err) {
 						console.log("Error downloading", key, "Error:", err);
@@ -225,7 +229,7 @@ function loadKernScoresFile(obj, force) {
 				if (info.url.match(/\/index.hmd$/)) {
 					HMDINDEX = new HMDIndex(info.data);
 					HMDINDEX.parameters.githubbase = file;
-					displayHmdIndexFinally(HMDINDEX, url);
+					displayHmdIndexFinally(HMDINDEX, url, options);
 				} else {
 					try {
 						jinfo = JSON.parse(info.data);
@@ -239,7 +243,7 @@ function loadKernScoresFile(obj, force) {
 							displayScoreTextInEditor(Base64.decode(jinfo.content), vrvWorker.page);
 						}
 						if (getnext) {
-							processInfo(jinfo, obj, false, false);
+							processInfo(jinfo, options, false, false);
 						}
 					} catch(err) {
 						console.log("Error downloading", key, "Error:", err);
@@ -261,7 +265,7 @@ function loadKernScoresFile(obj, force) {
 		try {
 			jinfo = JSON.parse(info.data);
 			if (getnext) {
-				processInfo(jinfo, obj, false, false);
+				processInfo(jinfo, options, false, false);
 			}
 		} catch(err) {
 			displayScoreTextInEditor(info.data, vrvWorker.page);

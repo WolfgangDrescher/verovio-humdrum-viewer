@@ -867,7 +867,7 @@ div#index-table-wrapper {
 	width: 32px;
 	height: 32px;
 	position: absolute;
-	top: 30px;
+	/* top: 30px; */
 	left: 10px;
 }
 
@@ -883,11 +883,43 @@ div#index-table-wrapper {
 	position: absolute;
 	width: 32px;
 	height: 32px;
-	top: 63px;
+	/* top: 63px; */
 	left: 10px;
 }
 
 #random-button:hover {
+	color: #ffffffff;
+	pointer: pointer;
+}
+
+#website-button {
+	border: none;
+	background: #01313f;
+	color: #ffffff99;
+	position: absolute;
+	width: 32px;
+	height: 32px;
+	/* top: 96px; */
+	left: 10px;
+}
+
+#website-button a:hover {
+	color: #ffffffff;
+	pointer: pointer;
+}
+
+#github-button {
+	border: none;
+	background: #01313f;
+	color: #ffffff99;
+	position: absolute;
+	width: 32px;
+	height: 32px;
+	/* top: 129px; */
+	left: 10px;
+}
+
+#github-button a:hover {
 	color: #ffffffff;
 	pointer: pointer;
 }

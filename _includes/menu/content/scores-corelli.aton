@@ -36,7 +36,7 @@
 @ZH-simplified:
 @ZH-traditional:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('corelli/op1')
+@ACTION:		MENU.loadRepertory(event, 'corelli/op1')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			website
@@ -85,7 +85,7 @@
 @ZH-simplified:
 @ZH-traditional:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('corelli/op3')
+@ACTION:		MENU.loadRepertory(event, 'corelli/op3')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			website
@@ -134,7 +134,7 @@
 @ZH-simplified:
 @ZH-traditional:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('corelli/op4')
+@ACTION:		MENU.loadRepertory(event, 'corelli/op4')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			website
@@ -183,7 +183,7 @@
 @ZH-simplified:
 @ZH-traditional:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('corelli/op6')
+@ACTION:		MENU.loadRepertory(event, 'corelli/op6')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			website
@@ -232,7 +232,7 @@
 @ZH-simplified:
 @ZH-traditional:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('corelli/op6')
+@ACTION:		MENU.loadRepertory(event, 'corelli/op6')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			website

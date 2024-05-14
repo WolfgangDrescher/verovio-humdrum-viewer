@@ -39,7 +39,7 @@
 @VI:
 @ZH-simplified:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('jrp/Duf')
+@ACTION:		MENU.loadRepertory(event, 'jrp/Duf')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			github
@@ -82,7 +82,7 @@
 @VI:
 @ZH-simplified:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('jrp/Ock')
+@ACTION:		MENU.loadRepertory(event, 'jrp/Ock')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			github
@@ -125,7 +125,7 @@
 @VI:
 @ZH-simplified:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('jrp/Jap')
+@ACTION:		MENU.loadRepertory(event, 'jrp/Jap')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			github
@@ -168,7 +168,7 @@
 @VI:
 @ZH-simplified:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('jrp/Bus')
+@ACTION:		MENU.loadRepertory(event, 'jrp/Bus')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			github
@@ -211,7 +211,7 @@
 @VI:
 @ZH-simplified:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('jrp/Gas')
+@ACTION:		MENU.loadRepertory(event, 'jrp/Gas')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			github
@@ -254,7 +254,7 @@
 @VI:
 @ZH-simplified:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('jrp/Jos')
+@ACTION:		MENU.loadRepertory(event, 'jrp/Jos')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			github
@@ -264,7 +264,7 @@
 
 @@BEGIN: ENTRY
 @@BEGIN: RIGHT_TEXT
-@ACTION: 		MENU.loadRepertory('jrp/Joa')
+@ACTION: 		MENU.loadRepertory(event, 'jrp/Joa')
 @DEFAULT:		<i>secure attribution</i>
 @AR:
 @CA:
@@ -300,7 +300,7 @@
 @ZH-traditional:
 @@END: RIGHT_TEXT
 @@BEGIN: RIGHT_TEXT
-@ACTION: 		MENU.loadRepertory('jrp/Job')
+@ACTION: 		MENU.loadRepertory(event, 'jrp/Job')
 @DEFAULT:		<i>not secure</i>
 @AR:
 @CA:
@@ -372,7 +372,7 @@
 @VI:
 @ZH-simplified:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('jrp/Rue')
+@ACTION:		MENU.loadRepertory(event, 'jrp/Rue')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			github
@@ -415,7 +415,7 @@
 @VI:
 @ZH-simplified:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('jrp/Obr')
+@ACTION:		MENU.loadRepertory(event, 'jrp/Obr')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			github
@@ -458,7 +458,7 @@
 @VI:
 @ZH-simplified:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('jrp/Ort')
+@ACTION:		MENU.loadRepertory(event, 'jrp/Ort')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			github

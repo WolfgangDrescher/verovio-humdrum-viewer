@@ -36,7 +36,7 @@
 @ZH-simplified:
 @ZH-traditional:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('beethoven/sonatas')
+@ACTION:		MENU.loadRepertory(event, 'beethoven/sonatas')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			github
@@ -81,7 +81,7 @@
 @ZH-simplified:
 @ZH-traditional:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('beethoven/quartets')
+@ACTION:		MENU.loadRepertory(event, 'beethoven/quartets')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			github

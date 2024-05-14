@@ -39,7 +39,7 @@
 @VI:
 @ZH-simplified:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('nifc/popc2/pl-cz')
+@ACTION:		MENU.loadRepertory(event, 'nifc/popc2/pl-cz')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			website
@@ -86,7 +86,7 @@
 @VI:
 @ZH-simplified:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('nifc/popc2/pl-gd')
+@ACTION:		MENU.loadRepertory(event, 'nifc/popc2/pl-gd')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			website
@@ -134,7 +134,7 @@
 @VI:
 @ZH-simplified:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('nifc/popc2/pl-kc')
+@ACTION:		MENU.loadRepertory(event, 'nifc/popc2/pl-kc')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			website
@@ -182,7 +182,7 @@
 @VI:
 @ZH-simplified:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('nifc/popc2/pl-kd')
+@ACTION:		MENU.loadRepertory(event, 'nifc/popc2/pl-kd')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			website
@@ -230,7 +230,7 @@
 @VI:
 @ZH-simplified:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('nifc/popc2/pl-kj')
+@ACTION:		MENU.loadRepertory(event, 'nifc/popc2/pl-kj')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			website
@@ -277,7 +277,7 @@
 @VI:
 @ZH-simplified:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('nifc/popc2/pl-kk')
+@ACTION:		MENU.loadRepertory(event, 'nifc/popc2/pl-kk')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			website
@@ -324,7 +324,7 @@
 @VI:
 @ZH-simplified:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('nifc/popc2/pl-kozmzk')
+@ACTION:		MENU.loadRepertory(event, 'nifc/popc2/pl-kozmzk')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			website
@@ -371,7 +371,7 @@
 @VI:
 @ZH-simplified:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('nifc/popc2/pl-sa')
+@ACTION:		MENU.loadRepertory(event, 'nifc/popc2/pl-sa')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			website
@@ -418,7 +418,7 @@
 @VI:
 @ZH-simplified:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('nifc/popc2/pl-stab')
+@ACTION:		MENU.loadRepertory(event, 'nifc/popc2/pl-stab')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			website
@@ -465,7 +465,7 @@
 @VI:
 @ZH-simplified:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('nifc/popc2/pl-wn')
+@ACTION:		MENU.loadRepertory(event, 'nifc/popc2/pl-wn')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			website
@@ -512,7 +512,7 @@
 @VI:
 @ZH-simplified:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('nifc/popc2/pl-wnifc')
+@ACTION:		MENU.loadRepertory(event, 'nifc/popc2/pl-wnifc')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			website
@@ -559,7 +559,7 @@
 @VI:
 @ZH-simplified:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('nifc/popc2/pl-wru')
+@ACTION:		MENU.loadRepertory(event, 'nifc/popc2/pl-wru')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			website
@@ -606,7 +606,7 @@
 @VI:
 @ZH-simplified:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('nifc/popc2/pl-wtm')
+@ACTION:		MENU.loadRepertory(event, 'nifc/popc2/pl-wtm')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			website
@@ -653,7 +653,7 @@
 @VI:
 @ZH-simplified:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('nifc/popc2/pl-wumfc')
+@ACTION:		MENU.loadRepertory(event, 'nifc/popc2/pl-wumfc')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			website
@@ -701,7 +701,7 @@
 @VI:
 @ZH-simplified:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('nifc/popc2/d-b')
+@ACTION:		MENU.loadRepertory(event, 'nifc/popc2/d-b')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			website
@@ -748,7 +748,7 @@
 @VI:
 @ZH-simplified:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('nifc/popc2/d-bnu')
+@ACTION:		MENU.loadRepertory(event, 'nifc/popc2/d-bnu')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			website
@@ -796,7 +796,7 @@
 @VI:
 @ZH-simplified:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('nifc/popc2/d-dl')
+@ACTION:		MENU.loadRepertory(event, 'nifc/popc2/d-dl')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			website
@@ -844,7 +844,7 @@
 @VI:
 @ZH-simplified:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('nifc/popc2/d-hs')
+@ACTION:		MENU.loadRepertory(event, 'nifc/popc2/d-hs')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			website
@@ -892,7 +892,7 @@
 @VI:
 @ZH-simplified:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('nifc/popc2/d-mbs')
+@ACTION:		MENU.loadRepertory(event, 'nifc/popc2/d-mbs')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			website
@@ -940,7 +940,7 @@
 @VI:
 @ZH-simplified:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('nifc/popc2/s-uu')
+@ACTION:		MENU.loadRepertory(event, 'nifc/popc2/s-uu')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			website

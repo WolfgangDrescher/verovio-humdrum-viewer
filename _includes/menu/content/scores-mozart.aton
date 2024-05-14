@@ -36,7 +36,7 @@
 @ZH-simplified:
 @ZH-traditional:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('mozart/sonatas')
+@ACTION:		MENU.loadRepertory(event, 'mozart/sonatas')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			github
@@ -81,7 +81,7 @@
 @ZH-simplified:
 @ZH-traditional:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('mozart/sonatas')
+@ACTION:		MENU.loadRepertory(event, 'mozart/sonatas')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @DEFAULT:		<i>measures</i>
@@ -118,6 +118,6 @@
 @ZH-simplified:
 @ZH-traditional:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('users/craig/dice/mozart/cda/measures')
+@ACTION:		MENU.loadRepertory(event, 'users/craig/dice/mozart/cda/measures')
 @@END: RIGHT_TEXT
 @@END: ENTRY

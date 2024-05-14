@@ -4,7 +4,8 @@
 // kernScoresUrl -- convert kernscores location into URL.
 //
 
-function kernScoresUrl(file, measures) {
+function kernScoresUrl(file, measures, options) {
+console.warn("ENTERING KERNSCORESURL");
 	var location;
 	var filename;
 	var user = "" ;
@@ -43,14 +44,14 @@ function kernScoresUrl(file, measures) {
 
 	if ((!filename) || !filename.match(/\.[a-z][a-z][a-z]$/)) {
 		if (!jrp) {
-			loadIndexFile(file);
+			loadIndexFile(file, options);
 			return;
 		}
 	}
 
 	if (filename.match(/^\s*$/)) {
 		if (!jrp) {
-			loadIndexFile(file);
+			loadIndexFile(file, options);
 			return;
 		}
 	}

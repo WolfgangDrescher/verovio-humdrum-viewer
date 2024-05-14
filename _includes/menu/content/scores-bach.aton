@@ -36,7 +36,7 @@
 @ZH-simplified:
 @ZH-traditional:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('artfugue')
+@ACTION:		MENU.loadRepertory(event, 'artfugue')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			github
@@ -81,7 +81,7 @@
 @ZH-simplified:
 @ZH-traditional:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('chorales-185')
+@ACTION:		MENU.loadRepertory(event, 'chorales-185')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:
@@ -130,7 +130,7 @@
 @ZH-simplified:
 @ZH-traditional:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('chorales')
+@ACTION:		MENU.loadRepertory(event, 'chorales')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			website
@@ -179,7 +179,7 @@
 @ZH-simplified:
 @ZH-traditional:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('inventions')
+@ACTION:		MENU.loadRepertory(event, 'inventions')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			github
@@ -224,7 +224,7 @@
 @ZH-simplified:
 @ZH-traditional:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('bwv1079')
+@ACTION:		MENU.loadRepertory(event, 'bwv1079')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			github
@@ -269,7 +269,7 @@
 @ZH-simplified:
 @ZH-traditional:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('bach-wtc-fugues')
+@ACTION:		MENU.loadRepertory(event, 'bach-wtc-fugues')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			github

@@ -35,7 +35,7 @@
 @ZH-simplified:
 @ZH-traditional:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('chopin-first-editions')
+@ACTION:		MENU.loadRepertory(event, 'chopin-first-editions')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			website
@@ -85,7 +85,7 @@
 @ZH-traditional:
 @ZH-traditional:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('chopin/mazurkas')
+@ACTION:		MENU.loadRepertory(event, 'chopin/mazurkas')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			github

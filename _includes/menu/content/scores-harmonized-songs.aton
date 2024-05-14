@@ -42,7 +42,7 @@
 @ZH-traditional:
 @ZH-traditional:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('osu/barbershop')
+@ACTION:		MENU.loadRepertory(event, 'osu/barbershop')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			github
@@ -88,7 +88,7 @@
 @ZH-traditional:
 @ZH-traditional:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('osu/barbershop', satb2gs)
+@ACTION:		MENU.loadRepertory(event, 'osu/barbershop', satb2gs)
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			
@@ -132,7 +132,7 @@
 @VI:
 @ZH-simplified:
 @ZH-traditional:
-@ACTION:		MENU.loadRepertory('liederschatz1')
+@ACTION:		MENU.loadRepertory(event, 'liederschatz1')
 @@END: TEXT
 @@BEGIN: RIGHT_TEXT
 @TYPE:			github
@@ -142,7 +142,7 @@
 
 @@BEGIN: ENTRY
 @@BEGIN: RIGHT_TEXT
-@ACTION: 		MENU.loadRepertory('liederschatz1', 'extract -k3')
+@ACTION: 		MENU.loadRepertory(event, 'liederschatz1', 'extract -k3')
 @DEFAULT:		<i>vocal part</i>
 @AR:
 @CA:
@@ -178,7 +178,7 @@
 @ZH-traditional:
 @@END: RIGHT_TEXT
 @@BEGIN: RIGHT_TEXT
-@ACTION: 		MENU.loadRepertory('liederschatz1', 'extract -k1-2')
+@ACTION: 		MENU.loadRepertory(event, 'liederschatz1', 'extract -k1-2')
 @DEFAULT:		<i>piano part</i>
 @AR:
 @CA:
