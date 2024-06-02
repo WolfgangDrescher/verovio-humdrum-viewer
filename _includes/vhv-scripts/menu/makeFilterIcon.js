@@ -33,7 +33,7 @@ function makeFilterIcon(filterList, title) {
 
 	let highlight = "";
 	if ((filterText !== "") && (filterText === string)) {
-		highlight = "highlight";
+		highlight = "highlight-filter-button";
 	}
 
 	output += `<span title="${title}" `;

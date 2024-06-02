@@ -394,6 +394,14 @@ span.info {
 	padding-left: 20px;
 }
 
+.highlight-filter-button, .highlight-filter-button span {
+	color: #cc0;
+	fill: #cc0;
+	stroke: #cc0;
+	opacity: 1.0;
+	filter: url(#highlight-shadow);
+}
+
 
 .highlight {
 	color: #c00;
