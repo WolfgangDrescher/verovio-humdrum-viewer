@@ -7,6 +7,7 @@
 
 function displayIndexFinally(index, location, options) {
 console.log("OPTIONS", options, JSON.stringify(GITHUB_LINKS));
+console.log("INDEX", index);
 	ShowingIndex = true;
 
 	IndexSupressOfInput = true;
@@ -152,6 +153,7 @@ console.log("OPTIONS", options, JSON.stringify(GITHUB_LINKS));
 			}
 		}
 	} else {
+console.error("GOT HERE NNN", file, WEBSITE_LINKS[file]);
 		if (WEBSITE_LINKS[file]) {
 			button += `<button title="view reperotory website" style="top:${cssTop + 33 * buttonCount}px" id="website-button">`;
 			button += `<a target="_blank" href="${WEBSITE_LINKS[file]}">`;

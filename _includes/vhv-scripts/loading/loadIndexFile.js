@@ -21,12 +21,22 @@ console.warn("ENTERING LOADINDEXFILE options = ", options, GITHUB_LINKS);
 		url += "&format=index";
 	}
 
-	console.log("Loading index", url);
+console.warn("OPTIONS", options, "URL", url);
+	if (!options) {
+		let matches = url.match(/data\?l=(.*?)(&|$)/);
+console.warn("LOCATION", matches[1]);
+
+		if (matches) {
+			options = {};
+			options.file = matches[1];
+		}
+	}
+
+	console.log("Loading index", url, options);
 
 	let request = new XMLHttpRequest();
 	request.open("GET", url);
 	request.addEventListener("load", function() {
-console.log("GOT HERE AAA", options);
 		if (request.status == 200) {
 			let INDEX = request.responseText;
 			// console.log("INDEX= ", INDEX);
