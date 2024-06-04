@@ -20,7 +20,9 @@
 {% include vhv-scripts/menu/makeFilterIcon.js          %}
 {% include vhv-scripts/menu/makePdfIcon.js             %}
 {% include vhv-scripts/menu/makeScanIcon.js            %}
+{% include vhv-scripts/menu/makeWikipediaIcon.js       %}
 {% include vhv-scripts/menu/makeYoutubeIcon.js         %}
+{% include vhv-scripts/menu/openOrReplaceWikipedia.js  %}
 {% include vhv-scripts/menu/openOrReplaceYoutube.js    %}
 
 

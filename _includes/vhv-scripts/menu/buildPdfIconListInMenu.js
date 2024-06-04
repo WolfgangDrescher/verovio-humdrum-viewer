@@ -27,6 +27,12 @@ function buildPdfIconListInMenu() {
 		}
 	}
 
+	if (urls.wikipedia && urls.wikipedia.length > 0) {
+		for (var i=0; i<urls.wikipedia.length; i++) {
+			output += makeWikipediaIcon(urls.wikipedia[i].url, urls.wikipedia[i].title);
+		}
+	}
+
 	if (urls.pdf && urls.pdf.length > 0) {
 		for (var i=0; i<urls.pdf.length; i++) {
 			output += makePdfIcon(urls.pdf[i].url, urls.pdf[i].title);
