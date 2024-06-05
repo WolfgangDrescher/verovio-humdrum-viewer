@@ -365,7 +365,15 @@ function processNotationKeyCommand(event) {
 			}
 			break;
 
-		// case KEYS.KKey:
+		case KEYS.KKey:
+			if (event.shiftKey) {
+				addSystemBreakToPreviousBarline();
+				event.preventDefault();
+			} else {
+				addSystemBreakToNextBarline();
+				event.preventDefault();
+			}
+			break;
 
 		case KEYS.LKey:
 			if (event.shiftKey) {
@@ -743,7 +751,16 @@ function processInterfaceKeyCommand(event) {
 		case KEYS.JKey:          // UNUSED
 			break;
 
-		case KEYS.KKey:          // UNUSED
+		case KEYS.KKey:
+			if (event.altKey) {
+				if (event.shiftKey) {
+					addSystemBreakToPreviousBarline();
+					event.preventDefault();
+				} else {
+					addSystemBreakToNextBarline();
+					event.preventDefault();
+				}
+			}
 			break;
 
 		case KEYS.LKey:          // toggle color of staff layers

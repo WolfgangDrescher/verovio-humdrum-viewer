@@ -86,6 +86,8 @@ var InterfaceSingleNumber = 0;
 {% include vhv-scripts/editor/addDataLineAboveCurrentPosition.js           %}
 {% include vhv-scripts/editor/addBarlineAboveCurrentPosition.js            %}
 {% include vhv-scripts/editor/addInvisibleBarlineAboveCurrentPosition.js   %}
+{% include vhv-scripts/editor/addSystemBreakToNextBarline.js               %}
+{% include vhv-scripts/editor/addSystemBreakToPreviousBarline.js           %}
 {% include vhv-scripts/editor/createNullLine.js                            %}
 {% include vhv-scripts/editor/addNullLine.js                               %}
 {% include vhv-scripts/editor/addSpineToRight.js                           %}
