@@ -22,6 +22,7 @@ function	displayPrePostHtml() {
 			// let humdrum = getTextFromEditor();
 
 			let parameters = getHumdrumParameters(humdrum);
+console.warn("PARAMETERS", parameters);
 			let language = LANGUAGE;
 
 			// parameters.PREHTML contains content of HTML code to display above score.
@@ -107,7 +108,114 @@ function	displayPrePostHtml() {
 				posthtmlElement.style.display = "none";
 			}
 
+			prepareEmbeddedScores(prehtmlElement, parameters);
+			prepareEmbeddedScores(posthtmlElement, parameters);
 		});
+}
+
+
+
+//////////////////////////////
+//
+// prepareEmbeddedScores -- insert SCORE data (for prange) as SVG image.
+//
+
+function prepareEmbeddedScores(target, parameters) {
+	if (!parameters.SCORE) {
+		return;
+	}
+	let placeholders = target.querySelectorAll("[data-score]");
+	if (placeholders.length == 0) {
+		return;
+	}
+	for (let i=0; i<placeholders.length; i++) {
+		let id = placeholders[i].dataset.score;
+		let scoredata = getScoreData(parameters.SCORE, id);
+		if (!scoredata) {
+			continue;
+		}
+		createSvgForScore(placeholders[i], scoredata);
+	}
+	
+}
+
+
+//////////////////////////////
+//
+// createSvgForScore --
+//
+
+function createSvgForScore(target, scoredata) {
+	if (!scoredata.CONTENTS && scoredata.CONTENT) {
+		scoredata.CONTENTS = scoredata.CONTENT;
+	}
+	if (!scoredata.CONTENTS) {
+		// nothing to do
+		console.warn("Warning: Could not find CONTENTS in", scoredata);
+		return;
+	}
+	let formData = new FormData();
+
+	if (scoredata.ANNOTATE)     { formData.append("annotate", scoredata.ANNOTATE); }
+	if (scoredata.ANTIALIAS)    { formData.append("antialias", scoredata.ANTIALIAS); }
+	if (scoredata.CROP)         { formData.append("crop", scoredata.CROP); }
+	if (scoredata.EMBEDPMX)     { formData.append("embedpmx", scoredata.EMBEDPMX); }
+	if (scoredata.OUTPUTFORMAT) { formData.append("outputformat", scoredata.OUTPUTFORMAT); }
+	if (scoredata.PADDING)      { formData.append("padding", scoredata.PADDING); }
+	if (scoredata.SCALING)      { formData.append("scaling", scoredata.SCALING); }
+	if (scoredata.SVGFORMAT)    { formData.append("svgformat", scoredata.SVGFORMAT); }
+	if (scoredata.TRANSPARENT)  { formData.append("transparent", scoredata.TRANSPARENT); }
+
+	formData.append("inputdata", scoredata.CONTENTS);
+	// let blob = new Blob([scoredata.CONTENTS], { type: "text/plain" });
+	// formData.append("inputdata", blob);
+
+	let url = "https://score.sapp.org/cgi-bin/score";
+	fetch(url, { method: "POST", body: formData })
+	.then(function (response) {
+		if (!response.ok) {
+			throw new Error("Error: could not download SVG image for "+ scoredata.ID);
+		}
+		return response.blob();
+	})
+	.then(function (blob) {
+		let objectURL = URL.createObjectURL(blob);
+      return fetch(objectURL).then(response => response.text());
+	})
+	.then(function (svg) {
+		// console.warn(">>>>>>>>>>>> SVG", svg);
+		target.innerHTML = svg;
+	})
+	.catch(function (error) {
+		console.error("Error submitting SCORE data:", error);
+	});
+}
+
+
+
+//////////////////////////////
+//
+// getScoreData --
+//
+
+function getScoreData(scoreinfo, id) {
+	if (!scoreinfo) {
+		return null;
+	}
+	if (!Array.isArray(scoreinfo)) {
+		scoreinfo = [ scoreinfo ];
+	}
+	
+	if (!Array.isArray(scoreinfo)) {
+		console.warn("WARNING: Score info is not an array:", scoreinfo);
+		return;
+	}
+	for (let i=0; i<scoreinfo.length; i++) {
+		if (scoreinfo[i].ID === id) {
+			return scoreinfo[i];
+		}
+	}
+	return null;
 }
 
 
