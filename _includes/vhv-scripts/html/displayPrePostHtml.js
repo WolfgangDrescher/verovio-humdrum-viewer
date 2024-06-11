@@ -12,17 +12,25 @@
 //
 {% endcomment %}
 
+var LAST_CHECKSUM = -1;
+
 function	displayPrePostHtml() {
 
 	vrvWorker.getHumdrum()
 		.then(humdrum => {
+
+			let checksum = getChecksum(humdrum);
+			if (checksum === LAST_CHECKSUM) {
+				return;
+			} else {
+				LAST_CHECKSUM = checksum;
+			}
 
 			let prehtmlElement  = document.querySelector(".PREHTML");
 			let posthtmlElement = document.querySelector(".POSTHTML");
 			// let humdrum = getTextFromEditor();
 
 			let parameters = getHumdrumParameters(humdrum);
-console.warn("PARAMETERS", parameters);
 			let language = LANGUAGE;
 
 			// parameters.PREHTML contains content of HTML code to display above score.

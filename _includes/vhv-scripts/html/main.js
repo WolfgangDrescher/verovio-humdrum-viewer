@@ -16,6 +16,7 @@
 {% endcomment %}
 
 {% include vhv-scripts/html/displayPrePostHtml.js %}
+{% include vhv-scripts/html/getChecksum.js %}
 {% include vhv-scripts/html/getHumdrumParameters.js %}
 {% include vhv-scripts/html/applyParameters.js %}
 
