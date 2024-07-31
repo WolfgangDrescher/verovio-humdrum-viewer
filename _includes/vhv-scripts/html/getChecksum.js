@@ -8,16 +8,22 @@
 // Syntax:        HTML; ECMAScript 6; Jekyll/Liquid
 // vim:           ts=3:nowrap
 //
-// Description:   Get simple checksum for avoiding retypesetting SCORE files.
+// Description:   Prevent re-processing PREHTML and POSTHEML content
+//                if the data has not changed. Avoid redoing if only
+//                a layout change in the graphical score.
 //
 {% endcomment %}
 
-function getChecksum(humdrum) {
-	let sum = 0;
-	for (let i=0; i<humdrum.length; i++) {
-		sum += humdrum.charCodeAt(i);
+function getChecksum(text) {
+	if (typeof text === "undefined") {
+		return 0;
 	}
-	return sum;
+
+	let checksum = 0;
+	for (let i=0; i<text.length; i++) {
+		checksum += text.charCodeAt(i);
+	}
+	return checksum;
 }
 
 
