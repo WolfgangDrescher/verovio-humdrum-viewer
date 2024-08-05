@@ -52,17 +52,25 @@ function	displayPrePostHtml() {
 			if (PREHTML && Array.isArray(PREHTML)) {
 				let pretext = "";
 				for (let i=0; i<PREHTML.length; i++) {
-					if (Object.keys(PREHTML[i]).length !== 0) {
-						let text = null;
-						if (language) {
-							text = PREHTML[i][`CONTENT-${language}`];
-						}
-						if (typeof text === "undefined") {
-							text = PREHTML[i].CONTENT;
-						}
-						text = applyParameters(text, PREHTML[i], REFS, language);
-						pretext += text;
+					if (Object.keys(PREHTML[i]).length == 0) {
+						continue;
 					}
+					if (PREHTML[i].SCRIPT) {
+						// Currently only one script is allowed at a time.
+						let jelement = document.querySelector("script#script-prehtml");
+						if (jelement) {
+							jelement.textContent = PREHTML[i].SCRIPT;
+						}
+					}
+					let text = null;
+					if (language) {
+						text = PREHTML[i][`CONTENT-${language}`];
+					}
+					if (typeof text === "undefined") {
+						text = PREHTML[i].CONTENT;
+					}
+					text = applyParameters(text, PREHTML[i], REFS, language);
+					pretext += text;
 				}
 				if (prehtmlElement) {
 					if (pretext) {
@@ -81,23 +89,25 @@ function	displayPrePostHtml() {
 			if (POSTHTML && Array.isArray(POSTHTML)) {
 				let posttext = "";
 				for (let i=0; i<POSTHTML.length; i++) {
-					if (Object.keys(POSTHTML[i]).length !== 0) {
-						if (POSTHTML[i].JAVASCRIPT) {
-							let jelement = document.querySelector("script#script-posthtml");
-							if (jelement) {
-								jelement.textContent = POSTHTML[i].JAVASCRIPT;
-							}
-						}
-						let text; // output text of PREHTML content
-						if (language) {
-							text = POSTHTML[i][`CONTENT-${language}`];
-						}
-						if (typeof text === "undefined") {
-							text = POSTHTML[i].CONTENT;
-						}
-						text = applyParameters(text, POSTHTML[i], REFS, language);
-						posttext += text;
+					if (Object.keys(POSTHTML[i]).length == 0) {
+						continue;
 					}
+					if (POSTHTML[i].SCRIPT) {
+						// Currently only one script is allowed at a time.
+						let jelement = document.querySelector("script#script-posthtml");
+						if (jelement) {
+							jelement.textContent = POSTHTML[i].SCRIPT;
+						}
+					}
+					let text; // output text of POSTHTML content
+					if (language) {
+						text = POSTHTML[i][`CONTENT-${language}`];
+					}
+					if (typeof text === "undefined") {
+						text = POSTHTML[i].CONTENT;
+					}
+					text = applyParameters(text, POSTHTML[i], REFS, language);
+					posttext += text;
 				}
 				if (posthtmlElement) {
 					if (posttext) {
