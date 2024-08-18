@@ -930,5 +930,3 @@ function highlightIdInEditor(id, source) {
 
 }
 
-
-

@@ -221,3 +221,40 @@ function humdrumDataNoteIntoView(event) {
 }
 
 
+
+
+//////////////////////////////
+//
+// gotoLineFieldInEditor --
+//
+
+function gotoLineFieldInEditor(row, field) {
+	let linecontent = EDITOR.session.getLine(row-1);
+
+	let col = 0;
+	if (field > 1) {
+		let tabcount = 0;
+		for (let i=0; i<linecontent.length; i++) {
+			col++;
+			if (linecontent[i] == '\t') {
+				if ((i > 0) && (linecontent[i-1] != '\t')) {
+					tabcount++;
+				}
+			}
+			if (tabcount == field - 1) {
+				break;
+			}
+		}
+	}
+
+	EDITOR.gotoLine(row, col);
+
+	// 0.5 = center the cursor vertically:
+	EDITOR.renderer.scrollCursorIntoView({row: row-1, column: col}, 0.5);
+	centerCursorHorizontallyInEditor();
+
+}
+
+
+
+
