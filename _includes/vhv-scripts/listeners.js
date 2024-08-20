@@ -270,7 +270,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		// console.log("SINGLE CLICK", event);
 		// turnOffAllHighlights();
 		var insvg = inSvgImage(event.target);
-		if (inSvgImage(event.target)) {
+		if (insvg) {
 		   dataIntoView(event);
 		}
 	});

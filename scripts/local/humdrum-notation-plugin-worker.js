@@ -3144,6 +3144,9 @@ HumdrumNotationPluginDatabase.prototype.insertDefaultOptions = function (baseid,
 	if (!vrvOptions.hasOwnProperty("header")) {
 		vrvOptions.header = "none";
 	}
+	if (!vrvOptions.hasOwnProperty("svgBoundingBoxes")) {
+		vrvOptions.svgBoundingBoxes = 1;
+	}
 
 	return vrvOptions;
 };
