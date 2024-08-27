@@ -57,6 +57,8 @@ function displayNotation(page, force, restoreid) {
 		prefix = "";
 	} else if (options.inputFrom === "mei") {
 		prefix = "";
+	} else if (options.inputFrom === "esac") {
+		prefix = "###";
 	}
 
 	if (prefix) {

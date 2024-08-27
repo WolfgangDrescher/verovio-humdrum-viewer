@@ -102,7 +102,6 @@ console.warn("GOT HERE NNN");
 		}
 	} else {
 		ret = kernScoresUrl(file, measures, options);
-console.error("GOT HERE OOO");
 		if (ret) {
 			url = ret.url;
 			key = ret.url;

@@ -63,6 +63,9 @@ function getFilenameExtension(text) {
 	if (beginning.match(/^[A-Za-z0-9+\/\s]+$/)) {
 		return "mime";
 	}
+	if (beginning.match(/^CUT\[/m)) {
+		return "esac";
+	}
 
 	var matches;
 	var ext;

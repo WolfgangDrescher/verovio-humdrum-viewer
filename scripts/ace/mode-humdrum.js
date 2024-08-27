@@ -56,17 +56,16 @@
 // https://github.com/ajaxorg/ace/wiki/Creating-or-Extending-an-Edit-Mode
 
 define("ace/mode/humdrum_highlight_rules",["require","exports","module","ace/lib/oop","ace/mode/text_highlight_rules"], function(require, exports, module) {
-"use strict";
+	"use strict";
 
-var oop = require("../lib/oop");
-var TextHighlightRules = require("./text_highlight_rules").TextHighlightRules;
+	var oop = require("../lib/oop");
+	var TextHighlightRules = require("./text_highlight_rules").TextHighlightRules;
 
-var HumdrumHighlightRules = function() {
-	 this.$rules = {
-		"start" : [{
+	var HumdrumHighlightRules = function() {
+		this.$rules = {
+			"start" : [{
 			token : "empty_line",
 			regex : "^$"
-
 		}, {
 			// discourage tabs within bibliographic entries:
 			token : ["bibliographic", "invalid.tab", "bibliographic"],
@@ -210,54 +209,54 @@ var HumdrumHighlightRules = function() {
 		}, {
 			defaultToken : "text"
 		}]
-	 };
-};
-
-oop.inherits(HumdrumHighlightRules, TextHighlightRules);
-
-exports.HumdrumHighlightRules = HumdrumHighlightRules;
-
-});
-
-define("ace/mode/humdrum",["require","exports","module","ace/lib/oop","ace/mode/text"], function(require, exports, module) {
-"use strict";
-
-var oop = require("../lib/oop");
-var TextMode = require("./text").Mode;
-var HumdrumHighlightRules = require("./humdrum_highlight_rules").HumdrumHighlightRules;
-
-var UIWorkerClient = require("ace/worker/worker_client").UIWorkerClient;
-
-var Mode = function() {
-	 this.HighlightRules = HumdrumHighlightRules;
-	 this.$behaviour = this.$defaultBehaviour;
-};
-oop.inherits(Mode, TextMode);
-
-(function() {
-	this.type = "text";
-	this.$id = "ace/mode/humdrum";
-
-	this.createWorker = function(session) {
-	  var worker = new UIWorkerClient(["ace"], "ace/mode/humdrum_worker",
-		 "HumdrumWorker");
-
-	  worker.attachToDocument(session.getDocument());
-
-	  worker.on("annotate", function(results) {
-		 session.setAnnotations(results.data);
-	  });
-
-	  worker.on("terminate", function() {
-		 session.clearAnnotations();
-	  });
-
-	  return worker;
+	 	};
 	};
 
-
-}).call(Mode.prototype);
-
-exports.Mode = Mode;
+	oop.inherits(HumdrumHighlightRules, TextHighlightRules);
+	exports.HumdrumHighlightRules = HumdrumHighlightRules;
 
 });
+
+
+
+define("ace/mode/humdrum",["require","exports","module","ace/lib/oop","ace/mode/text"], function(require, exports, module) {
+	"use strict";
+
+	var oop = require("../lib/oop");
+	var TextMode = require("./text").Mode;
+	var HumdrumHighlightRules = require("./humdrum_highlight_rules").HumdrumHighlightRules;
+
+	var UIWorkerClient = require("ace/worker/worker_client").UIWorkerClient;
+
+	var Mode = function() {
+		this.HighlightRules = HumdrumHighlightRules;
+		this.$behaviour = this.$defaultBehaviour;
+	};
+	oop.inherits(Mode, TextMode);
+
+	(function() {
+		this.type = "text";
+		this.$id = "ace/mode/humdrum";
+
+		this.createWorker = function(session) {
+			var worker = new UIWorkerClient(["ace"], "ace/mode/humdrum_worker", "HumdrumWorker");
+
+			worker.attachToDocument(session.getDocument());
+
+			worker.on("annotate", function(results) {
+				session.setAnnotations(results.data);
+			});
+
+			worker.on("terminate", function() {
+				session.clearAnnotations();
+			});
+
+			return worker;
+		};
+	}).call(Mode.prototype);
+
+	exports.Mode = Mode;
+});
+
+
+

@@ -153,7 +153,6 @@ console.log("INDEX", index);
 			}
 		}
 	} else {
-console.error("GOT HERE NNN", file, WEBSITE_LINKS[file]);
 		if (WEBSITE_LINKS[file]) {
 			button += `<button title="view reperotory website" style="top:${cssTop + 33 * buttonCount}px" id="website-button">`;
 			button += `<a target="_blank" href="${WEBSITE_LINKS[file]}">`;

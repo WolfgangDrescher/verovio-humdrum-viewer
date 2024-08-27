@@ -83,6 +83,7 @@ function showIdInEditor(id) {
 //
 // getMode -- return the Ace editor mode to display the data in:
 //    ace/mode/humdrum  == for Humdrum
+//    ace/mode/esac  == for Humdrum
 //    ace/mode/xml   == for XML data (i.e., MEI, or SVG)
 //
 
@@ -96,6 +97,8 @@ function getMode(text) {
 		return "musedata";
 	} else if (text.substring(0, 2000).match(/^[A-Za-z0-9+\/\s]+$/)) {
 		return "mime";
+	} else if (text.substring(0, 2000).match(/^CUT\[/m)) {
+		return "esac";
 	} else {
 		return "humdrum";
 	}

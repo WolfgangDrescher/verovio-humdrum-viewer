@@ -60,6 +60,8 @@ function verovioCalls() {
 			checkdata = false;
 		} else if (opts.inputFrom === "mei") {
 			checkdata = false;
+		} else if (opts.inputFrom === "esac") {
+			checkdata = false;
 		} else if (opts.inputFrom === "musicxml-hum") {
 			checkdata = false;
 		} else if (opts.inputFrom === "musedata-hum") {
@@ -94,7 +96,7 @@ function verovioCalls() {
 	//
 
 	this.renderData = function (opts, data, page, force) {
-		if (opts.inputFrom !== "musedata") {
+		if ((opts.inputFrom !== "musedata") && (opts.inputFrom !== "esac")) {
 			// do not validate Musedata as Humdrum
 			// (maybe add other input formats here, or
 			// only allow validation of Humdrum data).

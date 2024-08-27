@@ -1665,18 +1665,18 @@ define("ace/mode/json/json_parse",["require","exports","module"], function(requi
 	};
 });
 
-define("ace/mode/humdrum_worker", [], function(require, exports, module) {
+define("ace/mode/esac_worker", [], function(require, exports, module) {
   "use strict";
 
   var oop = require("../lib/oop");
   var Mirror = require("../worker/mirror").Mirror;
 
-  var HumdrumWorker = exports.HumdrumWorker = function(sender) {
+  var EsacWorker = exports.EsacWorker = function(sender) {
 	Mirror.call(this, sender);
 	this.setTimeout(100);
   };
 
-  oop.inherits(HumdrumWorker, Mirror);
+  oop.inherits(EsacWorker, Mirror);
 
   (function() {
 
@@ -1694,18 +1694,18 @@ define("ace/mode/humdrum_worker", [], function(require, exports, module) {
 		};
 
 		function error(text, row, col) {
-		pushError("error", text, row, col, text);
-		return true;
+			pushError("error", text, row, col, text);
+			return true;
 		};
 
 		function warning(text, row, col) {
-		pushError("warning", text, row, col, text);
-		return true;
+			pushError("warning", text, row, col, text);
+			return true;
 		};
 
 // Does not seem necessary to include here?  Is included in
 // ../verovio-intervace.js [css 20170828]
-// {% include_relative humdrumValidator.js %}
+// {% include_relative esacValidator.js %}
 
 		hum = this.doc.getAllLines().map(function(line) {
 			// [20190613: allow multiple tabs between spine fields]
@@ -1725,12 +1725,12 @@ define("ace/mode/humdrum_worker", [], function(require, exports, module) {
 			// Do not try to validate if text seems to be XML data.
 			return;
 		} else {
-			validateHumdrum_Process(hum, error, warning);
+			validateEsac_Process(hum, error, warning);
 			this.sender.emit("annotate", errors);
 		}
 	};
 
-  }).call(HumdrumWorker.prototype);
+  }).call(EsacWorker.prototype);
 
 });
 

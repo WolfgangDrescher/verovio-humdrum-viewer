@@ -19,6 +19,7 @@ define("ace/theme/humdrum_light",["require","exports","module","ace/lib/dom"],fu
 
 .ace-humdrum-light .ace_marker-layer .ace_selection {background: rgba(7, 54, 67, 0.09)}
 .ace-humdrum-light.ace_multiselect .ace_selection.ace_start {box-shadow: 0 0 3px 0px #FDF6E3;}
+
 .ace-humdrum-light .ace_marker-layer .ace_step {background: rgb(255, 255, 0)}
 .ace-humdrum-light .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid rgba(147, 161, 161, 0.50)}
 .ace-humdrum-light .ace_marker-layer .ace_active-line {background: #EEf3D5}
