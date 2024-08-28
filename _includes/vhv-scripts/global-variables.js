@@ -236,6 +236,9 @@ let EditorModes = {
 //     "esac"     for EsAC data
 let EditorMode = "humdrum";
 
+// EditorCursorLine: used to keep track for updating display of EsAC data
+let EditorCursorLine = 0;
+
 // KeyboardMode: controls if plain ace editor keybindings are used or vim key bindings.
 // Values can be:
 //     "ace" for the pain text editing mode

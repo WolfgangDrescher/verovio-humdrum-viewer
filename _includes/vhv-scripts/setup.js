@@ -73,8 +73,19 @@ function setupAceEditor(idtag) {
 
 	Range = require("ace/range").Range;
 
-	EDITOR.getSession().selection.on("changeCursor", function(event)
-		{ highlightNoteInScore(event)});
+	EDITOR.getSession().selection.on("changeCursor", function(event) {
+		if (EditorMode == "esac") {
+			var cursorPosition = EDITOR.getCursorPosition();
+			if (cursorPosition.row != EditorCursorLine) {
+				EditorCursorLine = cursorPosition.row;
+				if (!FreezeRendering) {
+					displayNotation();
+				}
+			}
+		} else {
+			highlightNoteInScore(event)
+		}
+	});
 
 	// Force the cursor to blink when blurred (unfocused):
 	// EDITOR.renderer.$cursorLayer.showCursor();

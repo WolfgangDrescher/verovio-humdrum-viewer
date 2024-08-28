@@ -27,7 +27,13 @@ function displayNotation(page, force, restoreid) {
 	// let inputarea = document.querySelector("#input");
 	// let data = inputarea.value;
 
-	let data = getTextFromEditor();
+	let data = "";
+	if (EditorMode == "esac") {
+		data = getCurrentEsacMelody();
+	}
+	if (data === "") {
+		data = getTextFromEditor();
+	}
 	if (!data) {
 		// This could be a transient state of the text editor before
 		// new contents is added.
@@ -643,6 +649,69 @@ function displayFileTitle(contents) {
 }
 
 
+//////////////////////////////
+//
+// displayFileTitleFromEsac --
+//
+
+function displayFileTitleFromEsac(contents) {
+	let lines = contents.split(/\r?\n/);
+	let cut = "";
+	let sig = "";
+	let keyid = "";
+	let collection = "";
+
+	let matches;
+	for (let i=0; i<lines.length; i++) {
+		if (matches = lines[i].match(/^CUT\[(.*)\]\s*$/)) {
+			cut = matches[1];
+		} else if (matches = lines[i].match(/^SIG\[(.*)\]\s*$/)) {
+			sig = matches[1];
+		} else if (matches = lines[i].match(/^KEY\[(.*)\]\s*$/)) {
+			let allkey = matches[1];
+			if (matches = allkey.match(/^\s*([^\s]+)\s/)) {
+				keyid = matches[1];
+			}
+		} else if (matches = lines[i].match(/^\s*([A-Z0-9_-]+)\s*$/)) {
+			collection = matches[1];
+		}
+	}
+
+	let title = "";
+	if (keyid !== "") {
+		title = keyid + ": ";
+	}
+	if (title === "") {
+		if (sig !== "") {
+			title = sig + ": ";
+		}
+	}
+	if (title !== "") {
+		title += " ";
+	}
+	if (cut !== "") {
+		title += cut;
+	}
+	title = title.replace(/ - /g, " &ndash; ");
+	// DWOK06 K0598:
+	title = title.replace("�", "ł", "g");
+
+	let tarea;
+	tarea = document.querySelector("#title");
+	if (tarea) {
+		tarea.innerHTML = title;
+	}
+
+	tarea = document.querySelector("#composer");
+	let pretitle = "";
+	if (collection !== "") {
+		pretitle = `<span style="letter-spacing:-1px; color:gray;">${collection}</span> `;
+	}
+	tarea.innerHTML = pretitle;
+
+	displayWorkNavigation("#work-navigator");
+}
+
 
 //////////////////////////////
 //
@@ -682,7 +751,6 @@ function displayWork(file) {
 //
 
 function displayIndex(directory, options) {
-console.warn("DIPLAYINDEX options = ", options);
 	ShowingIndex = true;
 	if (!directory) {
 		return;
@@ -773,6 +841,76 @@ function replaceEditorContentWithHumdrumFile(text, page) {
 			});
 
 		}
+	}
+}
+
+
+
+//////////////////////////////
+//
+// getCurrentEsacMelody --
+//
+
+function getCurrentEsacMelody() {
+
+	let cursorPosition = EDITOR.getCursorPosition();
+	let currentLine = cursorPosition.row;
+	let startLine = Math.max(0, currentLine - 50);
+	let endLine = Math.min(EDITOR.session.getLength() - 1, currentLine + 50);
+	let lines = EDITOR.session.getLines(startLine, endLine + 1);
+	let regex = /^[A-Z0-9_-]+\s*$/;
+
+
+	function findRange(lines, startLine, currentLine, regex) {
+		let start = -1;
+		let end = -1;
+
+		// Check if the current line matches the regex
+		if (regex.test(lines[currentLine - startLine])) {
+			start = currentLine; // Set the start line to the current line
+		} else {
+			// Search backward from current line to find first line matching regex
+			for (let i = currentLine - startLine; i >= 0; i--) {
+				if (regex.test(lines[i])) {
+					start = i + startLine; // Set start to first matching line above cursor
+					break;
+				}
+			}
+		}
+
+		// If no start line is found, return early
+		if (start === -1) {
+			return { start: start, end: end };
+		}
+
+		// Search forward from the line after the start line to find the next line matching the regex
+		for (let j = start - startLine + 1; j < lines.length; j++) {
+			if (regex.test(lines[j])) {
+				end = (j + startLine) - 1; // Set end to the line before the next matching line
+				break;
+			}
+		}
+
+		// If no next matching line is found, set the end to the last line in the window
+		if (end === -1) {
+			end = endLine; // Set end to the last line in the window (inclusive)
+		}
+
+		return { start: start, end: end };
+	}
+
+
+	// Find the range of lines to extract within the 50-line window
+	let range = findRange(lines, startLine, currentLine, regex);
+	// console.log("RANGE START = ", range.start, "RANGE END = ", range.end);
+
+	if (range.start !== -1 && range.end !== -1) {
+		// Extract the lines if a valid range is found
+		let extractedText = EDITOR.session.getLines(range.start, range.end).join("\n");
+		displayFileTitleFromEsac(extractedText);
+		return extractedText;
+	} else {
+		return "";
 	}
 }
 
@@ -952,8 +1090,9 @@ function showBufferedHumdrumData() {
 //
 
 function displayHumdrum() {
+	let text = getTextFromEditor();
 	let options = humdrumToSvgOptions();
-	vrvWorker.filterData(options, getTextFromEditor(), "humdrum")
+	vrvWorker.filterData(options, text, "humdrum")
 	.then(showHumdrum);
 }
 
@@ -1313,7 +1452,6 @@ function displayPdf() {
 //
 
 function displayKeyscape(event) {
-console.log(event);
 	let fileinfo = FILEINFO;
 	if (!fileinfo) {
 		console.log("Error: no fileinfo");
