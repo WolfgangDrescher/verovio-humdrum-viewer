@@ -47,7 +47,7 @@ function displayNotation(page, force, restoreid) {
 		data += "\n";
 	}
 	let options = humdrumToSvgOptions();
-	if (data.match(/CUT[[]/)) {
+	if (data.match(/^CUT\[/m)) {
 		options.inputFrom = "esac";
 	};
 	if (data.match(/Group memberships:/)) {
@@ -97,7 +97,7 @@ function displayNotation(page, force, restoreid) {
 		let ismusedata = false;
 		if (data.charAt(0) == "<") {
 			ishumdrum = false;
-		} else if (data.match(/CUT[[]/)) {
+		} else if (data.match(/^CUT\[/m)) {
 			ishumdrum = false;
 		} else if (data.match(/Group memberships:/)) {
 			ishumdrum = false;
@@ -656,16 +656,31 @@ function displayFileTitle(contents) {
 
 function displayFileTitleFromEsac(contents) {
 	let lines = contents.split(/\r?\n/);
-	let cut = "";
+	let cuttitle = "";
+	let cutincipit = "";
 	let sig = "";
 	let keyid = "";
 	let collection = "";
 
 	let matches;
+
+	matches = contents.match(/CUT\[\s*(.*?)\s*\]/s);
+	if (matches) {
+		let lines = matches[1].split(/\r?\n/);
+		if (lines.length == 1) {
+			cuttitle = lines[0].replace(/\s+$/, "");
+		} else if (lines.length > 1) {
+			cuttitle = lines[0].replace(/\s+$/, "");
+			cutincipit = lines[1].replace(/^\s+/, "");
+		} else {
+			cuttitle = "";
+			cutincipit = "";
+		}
+	}
+
+
 	for (let i=0; i<lines.length; i++) {
-		if (matches = lines[i].match(/^CUT\[(.*)\]\s*$/)) {
-			cut = matches[1];
-		} else if (matches = lines[i].match(/^SIG\[(.*)\]\s*$/)) {
+		if (matches = lines[i].match(/^SIG\[(.*)\]\s*$/)) {
 			sig = matches[1];
 		} else if (matches = lines[i].match(/^KEY\[(.*)\]\s*$/)) {
 			let allkey = matches[1];
@@ -686,15 +701,21 @@ function displayFileTitleFromEsac(contents) {
 			title = sig + ": ";
 		}
 	}
-	if (title !== "") {
-		title += " ";
+	if (cuttitle !== "") {
+		title += ` ${cuttitle}`;
 	}
-	if (cut !== "") {
-		title += cut;
+	if (cutincipit !== "") {
+		if (cuttitle !== "") {
+			title += ` <span style="color:gray">(<i>${cutincipit}</i>)</span>`;
+		} else {
+			title += `<i>${cutincipit}</i>`;
+			// treat as title
+		}
 	}
 	title = title.replace(/ - /g, " &ndash; ");
 	// DWOK06 K0598:
-	title = title.replace("�", "ł", "g");
+	// There can be this character  in titles: �, it represents
+	// an accented letter, but which one is unknown.
 
 	let tarea;
 	tarea = document.querySelector("#title");
@@ -765,6 +786,8 @@ function displayIndex(directory, options) {
 //
 // replaceEditorContentWithHumdrumFile -- If the editor contents is
 //    MusicXML, then convert to Humdrum and display in the editor.
+//    If it is EsAC data, then extract one EsAC file near cursor to
+//    convert to Humdrum.
 //
 
 function replaceEditorContentWithHumdrumFile(text, page) {
@@ -793,9 +816,10 @@ function replaceEditorContentWithHumdrumFile(text, page) {
 		// this is MEI data
 		options = meiToHumdrumOptions();
 		meiQ = true;
-	} else if (text.slice(0, 1000).match(/CUT[[]/)) {
+	} else if (text.slice(0, 1000).match(/^CUT\[/m)) {
 		// EsAC data
 		options = esacToHumdrumOptions();
+		text = getCurrentEsacMelody();
 	} else {
 		// don't know what it is, but probably Humdrum
 		alert("Cannot convert data to Humdrum");

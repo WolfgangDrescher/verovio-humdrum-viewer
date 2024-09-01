@@ -65,6 +65,11 @@ function toggleEditorMode() {
 
 function showIdInEditor(id) {
 	if (EditorMode == "xml") {
+		// MusicXML data has no IDs so cannot use this function
+		return;
+	}
+	if (EditorMode == "esac") {
+		// EsAC data has no IDs so cannot use this function
 		return;
 	}
 	var matches = id.match(/-[^-]*L(\d+)/);
