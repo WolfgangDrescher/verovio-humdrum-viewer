@@ -932,6 +932,24 @@ function getCurrentEsacMelody() {
 		// Extract the lines if a valid range is found
 		let extractedText = EDITOR.session.getLines(range.start, range.end).join("\n");
 		displayFileTitleFromEsac(extractedText);
+
+		// If there is contents in the GLOBALFILTER (handled by the
+		// filter toolbar), then include it as the last filter in the file:
+		if (GLOBALFILTER) {
+			let mode = getMode(extractedText);
+			if (mode === "esac") {
+				extractedText += "\n###filter: " + GLOBALFILTER + "\n";
+			} 
+		}
+
+		// Also add global verovio options:
+		if (GLOBAL_VEROVIO_OPTIONS) {
+			let mode = getMode(extractedText);
+			if (mode === "esac") {
+				extractedText += "\n###verovio: " + GLOBAL_VEROVIO_OPTIONS + "\n";
+			}
+		}
+
 		return extractedText;
 	} else {
 		return "";
@@ -1304,13 +1322,14 @@ function getTextFromEditorWithGlobalFilter(data) {
 			data += "\n@@@filter: " + GLOBALFILTER + "\n";
 		} else if (mode === "humdrum") {
 			data += "\n!!!filter: " + GLOBALFILTER + "\n";
+		} else if (mode === "esac") {
+			data += "\n###filter: " + GLOBALFILTER + "\n";
 		} else {
 			// This will not really be useful, however, since
 			// MusicXML data get converted directly to MEI
 			// when it is in the text editor.
 			data += "\n<!-- !!!filter: " + GLOBALFILTER + " -->\n";
 		}
-		// also consider other data formats such as EsAC
 	}
 
 	// Also add global verovio options:
@@ -1320,13 +1339,14 @@ function getTextFromEditorWithGlobalFilter(data) {
 			data += "\n@@@verovio: " + GLOBAL_VEROVIO_OPTIONS + "\n";
 		} else if (mode === "humdrum") {
 			data += "\n!!!verovio: " + GLOBAL_VEROVIO_OPTIONS + "\n";
+		} else if (mode === "esac") {
+			data += "\n###verovio: " + GLOBAL_VEROVIO_OPTIONS + "\n";
 		} else {
 			// This will not really be useful, however, since
 			// MusicXML data get converted directly to MEI
 			// when it is in the text editor.
 			data += "\n<!-- !!!verovio: " + GLOBALFILTER + " -->\n";
 		}
-		// also consider other data formats such as EsAC
 	}
 
 	return data;
