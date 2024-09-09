@@ -6,10 +6,12 @@ body.waiting * {
 	cursor: progress;
 }
 
+
 body {
 	/* prevent accidentally leaving page in chrome */
 	overscroll-behavior-x: none;
 }
+
 
 body {
 	background: #fffcf1;
@@ -20,22 +22,27 @@ body {
 	z-index: 1 !important;
 }
 
+
 /* needed to see scroll bar in help menu */
 ::-webkit-scrollbar {
 	-webkit-appearance: none;
 	width: 7px;
 }
+
+
 ::-webkit-scrollbar-thumb {
 	border-radius: 4px;
 	background-color: rgba(0,0,0,.5);
 	-webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
 }
 
+
 g[id^="note-"],
 g[id^="rest-"],
 g[id^="chord-"] {
     pointer-events: bounding-box;
 }
+
 
 g[id^="clef-"]:hover,
 g[id^="ksig-"]:hover,
@@ -89,15 +96,18 @@ td.igroup {
 	font-size: 2.0rem;
 }
 
+
 .ilink {
 	cursor: pointer;
 	color: #333388;
 }
 
+
 .ilink:hover {
 	cursor: pointer;
 	color: #883333;
 }
+
 
 svg:not(:root) {
 	overflow: inherit;
@@ -107,6 +117,7 @@ svg:not(:root) {
 #header-table {
 	margin-top: -5px; /* needed to avoid obscuring letters in title such as g, y, and j. */
 }
+
 
 #header-table td:first-child {
 	padding-left: 10px;
@@ -120,11 +131,13 @@ svg:not(:root) {
 	padding-right: 15px;
 }
 
+
 #work-navigator, #title-info {
 	padding-bottom: 5px;
 	display: inline-block;
 	white-space: nowrap;
 }
+
 
 #title-info {
 	width:       100%;
@@ -258,11 +271,13 @@ font b {
 	width: 400px;
 }
 
+
 .marked {
 	background: red;
 	color: red;
 	position: absolute;
 }
+
 
 div#splitter {
 	position: fixed;
@@ -295,6 +310,7 @@ div#index {
 	z-index: 300;
 }
 
+
 #output-container {
 	position: fixed;
 	top: 64px;
@@ -305,10 +321,12 @@ div#index {
 	z-index: 2;
 }
 
+
 #output-container {
 	overflow-y: scroll !important;
 	scroll-behavior: smooth;
 }
+
 
 #input {
 	font-size: 1rem;
@@ -333,8 +351,8 @@ textarea#input {
 }
 */
 
-/* Menu stylings */
 
+/* Menu stylings */
 
 #help-container {
 	-moz-box-shadow:    -1px -1px 25px #888;
@@ -356,10 +374,12 @@ textarea#input {
 	z-index: 2000;
 }
 
+
 #help-container a {
 	text-decoration: none;
 	color:       #d8ab5c;
 }
+
 
 #search-help {
    margin-right: 31px;
@@ -367,18 +387,22 @@ textarea#input {
    height: 30px;
 }
 
+
 table#help-table td {
 	text-align: left;
 	vertical-align:top;
 }
 
+
 table#help-table tr {
 	vertical-align:top;
 }
 
+
 table#help-table td:first-child {
 	padding-right:20px;
 }
+
 
 span.info {
 	z-index: 3;
@@ -393,6 +417,7 @@ span.info {
 	margin-right: 17px;
 	padding-left: 20px;
 }
+
 
 .highlight-filter-button, .highlight-filter-button span {
 	color: #cc0;
@@ -409,6 +434,8 @@ span.info {
 	stroke: #c00;
 	filter: url(#highlight-shadow);
 }
+
+
 .highlight [stroke] {
 	stroke: #c00;
 	stroke-width: 50px;
@@ -418,6 +445,7 @@ span.info {
 a.doclink {
 	color: #cc5500 !important;
 }
+
 
 span.helpentry {
 	color: #d8ab5c;
@@ -436,6 +464,8 @@ span.helpentry {
   src: url(https://fonts.gstatic.com/s/ebgaramond/v26/SlGWmQSNjdsmc35JDF1K5GRweDY1ZyHKpWiGIg.woff2) format('woff2');
   unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
 }
+
+
 /* cyrillic */
 @font-face {
   font-family: 'Times';
@@ -445,6 +475,8 @@ span.helpentry {
   src: url(https://fonts.gstatic.com/s/ebgaramond/v26/SlGWmQSNjdsmc35JDF1K5GRweD81ZyHKpWiGIg.woff2) format('woff2');
   unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
+
+
 /* greek-ext */
 @font-face {
   font-family: 'Times';
@@ -454,6 +486,8 @@ span.helpentry {
   src: url(https://fonts.gstatic.com/s/ebgaramond/v26/SlGWmQSNjdsmc35JDF1K5GRweDc1ZyHKpWiGIg.woff2) format('woff2');
   unicode-range: U+1F00-1FFF;
 }
+
+
 /* greek */
 @font-face {
   font-family: 'Times';
@@ -463,6 +497,8 @@ span.helpentry {
   src: url(https://fonts.gstatic.com/s/ebgaramond/v26/SlGWmQSNjdsmc35JDF1K5GRweDg1ZyHKpWiGIg.woff2) format('woff2');
   unicode-range: U+0370-03FF;
 }
+
+
 /* vietnamese */
 @font-face {
   font-family: 'Times';
@@ -472,6 +508,8 @@ span.helpentry {
   src: url(https://fonts.gstatic.com/s/ebgaramond/v26/SlGWmQSNjdsmc35JDF1K5GRweDQ1ZyHKpWiGIg.woff2) format('woff2');
   unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
 }
+
+
 /* latin-ext */
 @font-face {
   font-family: 'Times';
@@ -481,6 +519,8 @@ span.helpentry {
   src: url(https://fonts.gstatic.com/s/ebgaramond/v26/SlGWmQSNjdsmc35JDF1K5GRweDU1ZyHKpWiGIg.woff2) format('woff2');
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+
+
 /* latin */
 @font-face {
   font-family: 'Times';
@@ -490,6 +530,8 @@ span.helpentry {
   src: url(https://fonts.gstatic.com/s/ebgaramond/v26/SlGWmQSNjdsmc35JDF1K5GRweDs1ZyHKpWg.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+
+
 /* cyrillic-ext */
 @font-face {
   font-family: 'Times';
@@ -499,6 +541,8 @@ span.helpentry {
   src: url(https://fonts.gstatic.com/s/ebgaramond/v26/SlGWmQSNjdsmc35JDF1K5GRweDY1ZyHKpWiGIg.woff2) format('woff2');
   unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
 }
+
+
 /* cyrillic */
 @font-face {
   font-family: 'Times';
@@ -508,6 +552,8 @@ span.helpentry {
   src: url(https://fonts.gstatic.com/s/ebgaramond/v26/SlGWmQSNjdsmc35JDF1K5GRweD81ZyHKpWiGIg.woff2) format('woff2');
   unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
+
+
 /* greek-ext */
 @font-face {
   font-family: 'Times';
@@ -517,6 +563,8 @@ span.helpentry {
   src: url(https://fonts.gstatic.com/s/ebgaramond/v26/SlGWmQSNjdsmc35JDF1K5GRweDc1ZyHKpWiGIg.woff2) format('woff2');
   unicode-range: U+1F00-1FFF;
 }
+
+
 /* greek */
 @font-face {
   font-family: 'Times';
@@ -526,6 +574,8 @@ span.helpentry {
   src: url(https://fonts.gstatic.com/s/ebgaramond/v26/SlGWmQSNjdsmc35JDF1K5GRweDg1ZyHKpWiGIg.woff2) format('woff2');
   unicode-range: U+0370-03FF;
 }
+
+
 /* vietnamese */
 @font-face {
   font-family: 'Times';
@@ -535,6 +585,8 @@ span.helpentry {
   src: url(https://fonts.gstatic.com/s/ebgaramond/v26/SlGWmQSNjdsmc35JDF1K5GRweDQ1ZyHKpWiGIg.woff2) format('woff2');
   unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
 }
+
+
 /* latin-ext */
 @font-face {
   font-family: 'Times';
@@ -544,6 +596,8 @@ span.helpentry {
   src: url(https://fonts.gstatic.com/s/ebgaramond/v26/SlGWmQSNjdsmc35JDF1K5GRweDU1ZyHKpWiGIg.woff2) format('woff2');
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+
+
 /* latin */
 @font-face {
   font-family: 'Times';
@@ -553,6 +607,8 @@ span.helpentry {
   src: url(https://fonts.gstatic.com/s/ebgaramond/v26/SlGWmQSNjdsmc35JDF1K5GRweDs1ZyHKpWg.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+
+
 /* cyrillic-ext */
 @font-face {
   font-family: 'Times';
@@ -562,6 +618,8 @@ span.helpentry {
   src: url(https://fonts.gstatic.com/s/ebgaramond/v26/SlGUmQSNjdsmc35JDF1K5GR4SDk_YAPIlWk.woff2) format('woff2');
   unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
 }
+
+
 /* cyrillic */
 @font-face {
   font-family: 'Times';
@@ -571,6 +629,8 @@ span.helpentry {
   src: url(https://fonts.gstatic.com/s/ebgaramond/v26/SlGUmQSNjdsmc35JDF1K5GRxSDk_YAPIlWk.woff2) format('woff2');
   unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
+
+
 /* greek-ext */
 @font-face {
   font-family: 'Times';
@@ -580,6 +640,8 @@ span.helpentry {
   src: url(https://fonts.gstatic.com/s/ebgaramond/v26/SlGUmQSNjdsmc35JDF1K5GR5SDk_YAPIlWk.woff2) format('woff2');
   unicode-range: U+1F00-1FFF;
 }
+
+
 /* greek */
 @font-face {
   font-family: 'Times';
@@ -589,6 +651,8 @@ span.helpentry {
   src: url(https://fonts.gstatic.com/s/ebgaramond/v26/SlGUmQSNjdsmc35JDF1K5GR2SDk_YAPIlWk.woff2) format('woff2');
   unicode-range: U+0370-03FF;
 }
+
+
 /* vietnamese */
 @font-face {
   font-family: 'Times';
@@ -598,6 +662,8 @@ span.helpentry {
   src: url(https://fonts.gstatic.com/s/ebgaramond/v26/SlGUmQSNjdsmc35JDF1K5GR6SDk_YAPIlWk.woff2) format('woff2');
   unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
 }
+
+
 /* latin-ext */
 @font-face {
   font-family: 'Times';
@@ -607,6 +673,8 @@ span.helpentry {
   src: url(https://fonts.gstatic.com/s/ebgaramond/v26/SlGUmQSNjdsmc35JDF1K5GR7SDk_YAPIlWk.woff2) format('woff2');
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+
+
 /* latin */
 @font-face {
   font-family: 'Times';
@@ -616,6 +684,8 @@ span.helpentry {
   src: url(https://fonts.gstatic.com/s/ebgaramond/v26/SlGUmQSNjdsmc35JDF1K5GR1SDk_YAPI.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+
+
 /* cyrillic-ext */
 @font-face {
   font-family: 'Times';
@@ -625,6 +695,8 @@ span.helpentry {
   src: url(https://fonts.gstatic.com/s/ebgaramond/v26/SlGUmQSNjdsmc35JDF1K5GR4SDk_YAPIlWk.woff2) format('woff2');
   unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
 }
+
+
 /* cyrillic */
 @font-face {
   font-family: 'Times';
@@ -634,6 +706,8 @@ span.helpentry {
   src: url(https://fonts.gstatic.com/s/ebgaramond/v26/SlGUmQSNjdsmc35JDF1K5GRxSDk_YAPIlWk.woff2) format('woff2');
   unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
+
+
 /* greek-ext */
 @font-face {
   font-family: 'Times';
@@ -643,6 +717,8 @@ span.helpentry {
   src: url(https://fonts.gstatic.com/s/ebgaramond/v26/SlGUmQSNjdsmc35JDF1K5GR5SDk_YAPIlWk.woff2) format('woff2');
   unicode-range: U+1F00-1FFF;
 }
+
+
 /* greek */
 @font-face {
   font-family: 'Times';
@@ -652,6 +728,8 @@ span.helpentry {
   src: url(https://fonts.gstatic.com/s/ebgaramond/v26/SlGUmQSNjdsmc35JDF1K5GR2SDk_YAPIlWk.woff2) format('woff2');
   unicode-range: U+0370-03FF;
 }
+
+
 /* vietnamese */
 @font-face {
   font-family: 'Times';
@@ -661,6 +739,8 @@ span.helpentry {
   src: url(https://fonts.gstatic.com/s/ebgaramond/v26/SlGUmQSNjdsmc35JDF1K5GR6SDk_YAPIlWk.woff2) format('woff2');
   unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
 }
+
+
 /* latin-ext */
 @font-face {
   font-family: 'Times';
@@ -670,6 +750,8 @@ span.helpentry {
   src: url(https://fonts.gstatic.com/s/ebgaramond/v26/SlGUmQSNjdsmc35JDF1K5GR7SDk_YAPIlWk.woff2) format('woff2');
   unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+
+
 /* latin */
 @font-face {
   font-family: 'Times';
@@ -689,6 +771,7 @@ span.helpentry {
 	font-weight: normal
 }
 
+
 @font-face {
 	font-family: "Times";
 	src: url("../scripts/pdfkit/EBGaramond-Italic.ttf");
@@ -696,12 +779,14 @@ span.helpentry {
 	font-weight: normal
 }
 
+
 @font-face {
 	font-family: "Times";
 	src: url("../scripts/pdfkit/EBGaramond-Bold.ttf");
 	font-style: normal;
 	font-weight: bold
 }
+
 
 @font-face {
 	font-family: "Times";
@@ -722,11 +807,14 @@ span.helpentry {
 	stroke: green;
 */
 }
+
+
 .phraseStart [stroke] {
 /*
 	stroke: green;
 */
 }
+
 
 .phraseStop {
 /*
@@ -735,11 +823,14 @@ span.helpentry {
 	stroke: blue;
 */
 }
+
+
 .phraseStop [stroke] {
 /*
 	stroke: blue;
 */
 }
+
 
 .phraseStart.phraseStop {
 /*
@@ -748,15 +839,19 @@ span.helpentry {
 	stroke: orange;
 */
 }
+
+
 .phraseStart.phraseStop [stroke] {
 /*
 	stroke: orange;
 */
 }
 
+
 .ace_gutter, .ace-scroller {
 	z-index: 100;
 }
+
 
 .ace_dialog, .ace_dialog_bottom {
 	z-index: 200 !important;
@@ -767,38 +862,47 @@ svg {
 	z-index: 3;
 }
 
+
 .ace_tooltip {
 	z-index: 400 !important;
 }
+
 
 body.frozen #output, body.frozen #splitter, body.frozen {
 	background: #ffffff
 }
 
+
 body.invalid #output, body.invalid #splitter, body.invalid {
 	background: #ffe0e0
 }
+
 
 span.ilink {
 	color: #01313f;
 }
 
+
 .mbutton {
 	margin-left: 10px;
 }
+
 
 .mbutton:hover {
 	background: #999 !important;
 	stroke: yellow;
 }
 
+
 .mbutton span.fas:hover {
 	color: white;
 }
 
+
 .fas-play :hover {
 	color: white !important;
 }
+
 
 .nav-play-button {
 	position: fixed;
@@ -820,27 +924,33 @@ span.ilink {
 	white-space: nospace;
 }
 
+
 .nav-icon table td {
 	cursor: pointer;
 }
+
 
 .nav-icon table td:nth-child(2) {
 	padding-left: 10px;
 	padding-right: 10px;
 }
 
+
 .nav-icon td: hover {
 	color: white;
 }
+
 
 #work-navigator {
 	opacity: 0.6;
 	color: white;
 }
 
+
 #work-navigator span:hover {
 	color: white;
 }
+
 
 div#index {
 	width: 80%;
@@ -860,6 +970,7 @@ div#index {
 	position: relative;
 }
 
+
 div#index-table-wrapper {
 	padding-left: 50px;
 	padding-right: 50px;
@@ -867,6 +978,7 @@ div#index-table-wrapper {
 	overflow-y: auto;
 	overflow-x: hidden;
 }
+
 
 #close-button {
 	border: none;
@@ -879,10 +991,12 @@ div#index-table-wrapper {
 	left: 10px;
 }
 
+
 #close-button:hover {
 	color: #ffffffff;
 	pointer: pointer;
 }
+
 
 #random-button {
 	border: none;
@@ -895,10 +1009,12 @@ div#index-table-wrapper {
 	left: 10px;
 }
 
+
 #random-button:hover {
 	color: #ffffffff;
 	pointer: pointer;
 }
+
 
 #website-button {
 	border: none;
@@ -911,10 +1027,12 @@ div#index-table-wrapper {
 	left: 10px;
 }
 
+
 #website-button a:hover {
 	color: #ffffffff;
 	pointer: pointer;
 }
+
 
 #github-button {
 	border: none;
@@ -927,27 +1045,33 @@ div#index-table-wrapper {
 	left: 10px;
 }
 
+
 #github-button a:hover {
 	color: #ffffffff;
 	pointer: pointer;
 }
 
+
 #output svg g.dir.problem tspan.rend tspan.text tspan.text.p {
   font-family: "FontAwesome";
 }
+
 
 #output svg g.dir.sic tspan.rend tspan.text tspan.text.s {
   font-family: "FontAwesome";
 }
 
+
 #navbarNavDropdown {
 	white-space: nowrap;
 }
+
 
 button.navbar-toggler {
 	font-size: 13px;
 	margin-top: -16px;
 }
+
 
 span.navbar-toggler-icon.collapsed {
 	font-size: 15px;
@@ -959,12 +1083,22 @@ span.navbar-toggler-icon.collapsed {
 	padding-left: 0 !important;
 }
 
+
 span.dropdown-toggle {
 	margin-left: 15px;
 }
+
 
 .dummy {
 	padding-top: 5px;
 }
 
+
+.esac-highlight {
+	background-color: magenta;
+	opacity: 25%;
+	margin-left: 4px;
+	pointer-events: none; /* Allows clicks through the overlay */
+	position: absolute;
+}
 

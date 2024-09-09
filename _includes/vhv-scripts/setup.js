@@ -81,6 +81,7 @@ function setupAceEditor(idtag) {
 				if (!FreezeRendering) {
 					displayNotation();
 				}
+				updateMelodyStartLineForEsac();
 			}
 		} else {
 			highlightNoteInScore(event)
@@ -111,7 +112,123 @@ function setupAceEditor(idtag) {
 	}
 
 	insertSplashMusic();
+}
 
+
+
+//////////////////////////////
+//
+// updateMelodyStartLineForEsac
+//
+
+function updateMelodyStartLineForEsac() {
+	if (EditorMode !== "esac") {
+		clearAllAceMarkers();
+	}
+
+	let cursorPosition = EDITOR.getCursorPosition();
+	let currentLine = cursorPosition.row;
+	let startLine = Math.max(0, currentLine - 50);
+	let endLine = Math.min(EDITOR.session.getLength() - 1, currentLine + 50);
+	let lines = EDITOR.session.getLines(startLine, endLine + 1);
+	let regex = /^[A-Z0-9_-]+\s*$/;
+
+	function findRange(lines, startLine, currentLine, regex) {
+		let start = -1;
+		let end = -1;
+
+		// Check if the current line matches the regex
+		if (regex.test(lines[currentLine - startLine])) {
+			start = currentLine; // Set the start line to the current line
+		} else {
+			// Search backward from current line to find first line matching regex
+			for (let i = currentLine - startLine; i >= 0; i--) {
+				if (regex.test(lines[i])) {
+					start = i + startLine; // Set start to first matching line above cursor
+					break;
+				}
+			}
+		}
+
+		// If no start line is found, return early
+		//if (start === -1) {
+		//	return { start: start, end: end };
+		//}
+
+		// Search forward from the line after the start line to find the next line matching the regex
+		let startj = 0;
+		if (start < 0) {
+			for (let j = 0; j < lines.length; j++) {
+				if (regex.test(lines[j])) {
+					startj = j + 1;
+					start = j; // Set to the next
+					break;
+				}
+			}
+		}
+
+		for (let j = startj; j < lines.length; j++) {
+			if (regex.test(lines[j])) {
+				end = (j + startLine) - 1; // Set end to the line before the next matching line
+				break;
+			}
+		}
+
+		// If no next matching line is found, set the end to the last line in the window
+		if (end < 0) {
+			end = endLine; // Set end to the last line in the window (inclusive)
+		}
+		if (start < 0) {
+			start = 0;
+		} 
+
+		return { start: start, end: end };
+	}
+
+	clearAllAceMarkers();
+
+	// Find the range of lines to extract within the 50-line window
+	let range = findRange(lines, startLine, currentLine, regex);
+	// console.log("RANGE START = ", range.start, "RANGE END = ", range.end);
+
+	if (range.start !== -1) {
+		addAceEditorMarker(range.start);
+	} else {
+		console.warn("Cannot find starting line of EsAC data.");
+	}
+}
+
+
+
+//////////////////////////////
+//
+// addAceEditorMarker --
+//
+
+function addAceEditorMarker(line) {
+	console.warn("ADDING MARKER TO LINE", line);
+	let range = ace.require('ace/range').Range;
+	let value = EDITOR.session.addMarker(new range(line, 0, line, 1), "esac-highlight", "fullLine", true);
+	EDITOR.renderer.updateFull(); // Forces the editor to refresh/render
+	console.error("MARKER RETURN", value);
+}
+
+
+
+//////////////////////////////
+//
+// clearAllAceMarks --
+//
+
+function clearAllAceMarkers() {
+	let markers = EDITOR.session.getMarkers(true);
+	for (let markerId in markers) {
+		if (markers.hasOwnProperty(markerId)) {
+			if (markers[markerId].type === "fullLine") {
+				EDITOR.session.removeMarker(markerId);
+			}
+		}
+	}
 }
 
 

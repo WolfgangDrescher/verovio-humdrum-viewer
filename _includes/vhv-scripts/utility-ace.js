@@ -98,13 +98,17 @@ function getMode(text) {
 	}
 	if (text.match(/^\s*</)) {
 		return "xml";
+		clearAllAceMarkers();
 	} else if (text.substring(0, 2000).match(/Group memberships:/)) {
+		clearAllAceMarkers();
 		return "musedata";
 	} else if (text.substring(0, 2000).match(/^[A-Za-z0-9+\/\s]+$/)) {
+		clearAllAceMarkers();
 		return "mime";
 	} else if (text.substring(0, 2000).match(/^CUT\[/m)) {
 		return "esac";
 	} else {
+		clearAllAceMarkers();
 		return "humdrum";
 	}
 }

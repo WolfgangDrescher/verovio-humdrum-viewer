@@ -794,6 +794,7 @@ function replaceEditorContentWithHumdrumFile(text, page) {
 	if (!text) {
 		text = getTextFromEditor();
 	}
+	clearAllAceMarkers();
 	if (!text) {
 		console.log("No content to convert to Humdrum");
 		return;
