@@ -28,7 +28,7 @@ function makePdfIcon(url, title) {
 	if (lindex[LANGUAGE]) {
 		newtitle = lindex[LANGUAGE];
 	} else if (lindex.EN) {
-		newtitle = lindex[EN];
+		newtitle = lindex.EN;
 	} else {
 		newtitle = title;
 	}
